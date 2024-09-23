@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>profile.knit</title>
+
+<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> Open Data Format - ODF</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="specification.html">Specification</a>
+</li>
+<li>
+  <a href="profile.html">Metadata Profile</a>
+</li>
+<li>
+  <a href="r-package.html">R-Package opendataformat</a>
+</li>
+<li>
+  <a href="stata-package.html">Stata Package opendf</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:thartl@diw.de">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/opendataformat/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore"><img src="images/odf%20icon%20long.png" alt="Icon" style="height:150px;"/></h1>
+
+</div>
+
+
+<hr />
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#explanation">Explanation</a>
+<ul>
+<li><a href="#mandatory-constraint">Mandatory Constraint</a></li>
+<li><a href="#optional-constraint">Optional Constraint</a></li>
+<li><a
+href="#mandatory-if-parent-element-is-present-constraint">Mandatory if
+parent element is present Constraint</a></li>
+</ul></li>
+<li><a href="#complete-profile-view">Complete Profile View</a></li>
+</ul>
+<hr />
+<div id="open-data-format-profile" class="section level1">
+<h1>Open Data Format: Profile</h1>
+<p>The Open Data Format (ODF) profile gives an overview of the metadata
+elements’ and attributes’ semantic definition and constraints. The
+documentation of the metadata specification is the basis for the
+internal programming work of the project. It is also necessary
+concerning interoperability. For example, external developers may want
+to adapt the metadata specification developed here for their projects.
+Besides the documentary function, a profile is a handy tool for
+validating a metadata file. Data producers can check upfront whether
+their data product will work with the technical solutions developed in
+this project. For example, if you create an XML metadata file in the
+ODF-specification yourself, you can validate it. For this purpose you
+can use the <a href="profile.xml">XML profile</a> from this repository
+and upload it, together with your XML metadata file (e. g., from the <a
+href="../example/metadata.xml">example</a> folder) to the website of the
+<a href="https://cmv.cessda.eu/#!validation">CESSDA Metadata
+Validator</a>.</p>
+<p>The metadata component of the Open Data Format follows the
+DDI-Codebook 2.5 schema. As mentioned on the <a
+href="https://ddialliance.org/learn/resources/ddi-profiles">DDI Alliance
+website</a>, “DDI is a very flexible and complex standard that may be
+used by various projects or organizations in ‘customized’ ways that best
+answer specific needs. DDI profiles allow different agents or agencies
+to specify exactly how they use the DDI XML format, and thus help
+achieve seamless transfer and interoperability of DDI instances. A DDI
+profile describes the subset of valid DDI objects used by an agency for
+a specified purpose. This is documented in a DDI-XML format, which
+allows a set of declarations to be made, identifying specific fields in
+the DDI which are ‘Used’ or ‘Not Used’. Various other qualifications can
+be made to restrict or default permitted values for specific elements,
+and human-readable documentation can be added” (Source: <a
+href="https://ddialliance.org/learn/resources/ddi-profiles"
+class="uri">https://ddialliance.org/learn/resources/ddi-profiles</a>).</p>
+<p>The template for the development and documentation of the Open Data
+Format profile is the DDI-Codebook 2.5 schema. The description text is
+mostly taken from the “Linked Field-Level documentation” of the
+DDI-Codebook 2.5 schema (<a
+href="https://ddialliance.org/Specification/DDI-Codebook/2.5/"
+class="uri">https://ddialliance.org/Specification/DDI-Codebook/2.5/</a>).
+Some text passages we have adapted or supplemented and made the changes
+notable by marking them with the characters &lt;<em>modyfied
+text</em>&gt;.</p>
+</div>
+<div id="explanation" class="section level1">
+<h1>Explanation</h1>
+<p>The ODF profile holds a set of constrains that use Xpath syntax to
+define the usage of elements and attributes. The Xpath syntax uses a
+path notation, like those used in URLs, for addressing parts of an XML
+document. There are three types of constrains for the usage of the
+nodes: <code>mandatory</code>, <code>optional</code>, and
+<code>mandatory if parent element is present</code>.</p>
+<p>Using some examples, we explain the implementation of the three
+constraints within the XML profile file, which is necessary for
+validating the actual XML file that stores the dataset’s metadata
+component. For a complete human-readable view of the profile, skip to
+the section <a href="#overview">Overview</a> or take a look at the <a
+href="profile_view.csv">XML profile CSV file</a>. The XML file of the
+ODF metadata profile, you can find under <a
+href="profile.xml">profile.xml</a> in this directory.</p>
+<div id="mandatory-constraint" class="section level2">
+<h2>Mandatory Constraint</h2>
+<p>The function of the <code>var</code> node is to hold multiple pieces
+of information describing a variable at different hierarchical levels.
+Since a dataset without variables is not a dataset by definition, it
+makes sense that the <code>var</code> node is a mandatory element of the
+Open Data Format metadata specification.</p>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="9%" />
+<col width="59%" />
+<col width="15%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">element.label</th>
+<th align="left">element.description</th>
+<th align="left">xml file</th>
+<th align="left">xml_classification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">19</td>
+<td align="left">variable</td>
+<td align="left">This element describes all of the features of a single
+variable in a social science data file.</td>
+<td align="left">//codeBook/dataDscr/var</td>
+<td align="left">mandatory</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1: Example for an mandatory constraint within the ODF
+Profile.</p>
+<pre class="xml"><code>    &lt;pr:Used xpath=&quot;/codeBook/dataDscr/var&quot; isRequired=&quot;true&quot;&gt;
+        &lt;r:Description&gt;
+            &lt;r:Content&gt;Required: Mandatory&lt;/r:Content&gt;
+            &lt;r:Content&gt;ElementType: Content element&lt;/r:Content&gt;                             
+            &lt;r:Content&gt;Usage: This element describes all of the features of a single variable in a 
+            social science data file. 
+            &lt;/r:Content&gt;            
+        &lt;/r:Description&gt;
+    &lt;/pr:Used&gt;  </code></pre>
+<p>Code 1: Respective XML Code for the example presented in Table 1.</p>
+<!-- -------------------- -->
+</div>
+<div id="optional-constraint" class="section level2">
+<h2>Optional Constraint</h2>
+<p>The metadata specification of the Open Data Format allows providing a
+lengthier description of a variable that goes beyond the variable label.
+Since an extended variable description may not always be necessary, the
+profile declares the Xpath <code>//codeBook/dataDscr/var/txt</code>
+optional.</p>
+<table>
+<colgroup>
+<col width="4%" />
+<col width="18%" />
+<col width="34%" />
+<col width="24%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">element.label</th>
+<th align="left">element.description</th>
+<th align="left">xml file</th>
+<th align="left">xml_classification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">23</td>
+<td align="left">variable description</td>
+<td align="left">Lengthier description of the variable.</td>
+<td align="left">//codeBook/dataDscr/var/txt</td>
+<td align="left">optional</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2: Example for an optional constraint within the ODF
+Profile.</p>
+<pre class="xml"><code>    &lt;pr:Used xpath=&quot;/codeBook/dataDscr/var/txt&quot; isRequired=&quot;false&quot;&gt;
+        &lt;r:Description&gt;
+            &lt;r:Content&gt;Required: Optional&lt;/r:Content&gt;
+            &lt;r:Content&gt;ElementType: Content element&lt;/r:Content&gt;         
+            &lt;r:Content&gt;Usage: Lengthier description of the parent variable.&lt;/r:Content&gt;         
+        &lt;/r:Description&gt;
+    &lt;/pr:Used&gt;  </code></pre>
+<p>Code 2: Respective XML Code for the example presented in Table 2.</p>
+<!-- -------------------- -->
+</div>
+<div id="mandatory-if-parent-element-is-present-constraint"
+class="section level2">
+<h2>Mandatory if parent element is present Constraint</h2>
+<p>The metadata specification of the Open Data Format supports
+multi-lingual labels and descriptions for several dataset elements like
+variables or values, which makes it necessary to declare the language of
+the text element using the attribute <code>@xml:lang</code>. For
+example, if a variable description exists (even if it is optional), the
+declaration of the language is mandatory.</p>
+<table>
+<colgroup>
+<col width="2%" />
+<col width="6%" />
+<col width="57%" />
+<col width="17%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">element.label</th>
+<th align="left">element.description</th>
+<th align="left">xml file</th>
+<th align="left">xml file</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">24</td>
+<td align="left">language tag</td>
+<td align="left">Attribute to specify the language of the
+<variable description>. &lt;Use ISO-639-1-Code for language subtags,
+e.g. en for English.&gt;</td>
+<td align="left">//codeBook/dataDscr/var/txt<span
+class="math display">\[@xml:lang\]</span></td>
+<td align="left">mandatory if ‘txt’ element is present</td>
+</tr>
+</tbody>
+</table>
+<p>Table 3: Example for an “mandotory if parent element is present”
+constraint within the ODF Profile.</p>
+<pre class="xml"><code>    &lt;pr:Used xpath=&quot;/codeBook/dataDscr/var/txt/@xml:lang&quot; isRequired=&quot;false&quot;&gt;
+        &lt;r:Description&gt;
+            &lt;r:Content&gt;Required: Mandatory if &#39;txt&#39; element is present.&lt;/r:Content&gt;
+            &lt;r:Content&gt;ElementType: Attribute element&lt;/r:Content&gt;
+            &lt;r:Content&gt;Usage: Attribute to specify the language of the variable description&gt;. Use ISO-639-1-Code for language subtags, e.g. en for English.&lt;/r:Content&gt;         
+        &lt;/r:Description&gt;
+        &lt;pr:Instructions&gt;
+            &lt;r:Content&gt;
+                &lt;![CDATA[&lt;Constraints&gt;&lt;MandatoryNodeIfParentPresentConstraint/&gt;&lt;/Constraints&gt;]]&gt;
+            &lt;/r:Content&gt;
+        &lt;/pr:Instructions&gt;  
+    &lt;/pr:Used&gt;  </code></pre>
+<p>Code 3: Respective XML Code for the example presented in Table 3.</p>
+<!-- -------------------- -->
+</div>
+</div>
+<div id="complete-profile-view" class="section level1">
+<h1>Complete Profile View</h1>
+<table>
+<colgroup>
+<col width="4%" />
+<col width="70%" />
+<col width="14%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">element.label</th>
+<th align="left">element.description</th>
+<th align="left">xml file</th>
+<th align="left">xml_classification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">/codeBook</td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">The top-level element, codeBook, also includes a
+version attribute to specify the version number of the DDI
+specification.</td>
+<td align="left">//codeBook<span
+class="math display">\[@version\]</span></td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">//codeBook<span
+class="math display">\[@xmlns\]</span></td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">//codeBook<span
+class="math display">\[@xmlns:xsi\]</span></td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">//codeBook<span
+class="math display">\[@xsi:schemaLocation\]</span></td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="even">
+<td align="left">study</td>
+<td align="left">Information about the data collection, study, or
+compilation</td>
+<td align="left">//codeBook/stdyDscr</td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Provides bibliographic information for the work.</td>
+<td align="left">//codeBook/stdyDscr/citation</td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Provides title statement for the work.</td>
+<td align="left">//codeBook/stdyDscr/citation/titlStmt</td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="odd">
+<td align="left">study title</td>
+<td align="left">Study title</td>
+<td align="left">//codeBook/stdyDscr/citation/titlStmt/titl</td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="even">
+<td align="left">language tag</td>
+<td align="left">Attribute to specify the language of the &lt;study
+tile. &lt;Use ISO-639-1-Code for language subtags, e.g. en for
+English.&gt;</td>
+<td align="left">//codeBook/stdyDscr/citation/titlStmt/titl<span
+class="math display">\[@xml:lang\]</span></td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left">parallel study title</td>
+<td align="left">Title translated into another language.</td>
+<td align="left">//codeBook/stdyDscr/citation/titlStmt/parTitl</td>
+<td align="left">optional</td>
+</tr>
+<tr class="even">
+<td align="left">language tag</td>
+<td align="left">Attribute to specify the language of the study title.
+&lt;Use ISO-639-1-Code for language subtags, e.g. en for
+English.&gt;</td>
+<td align="left">//codeBook/stdyDscr/citation/titlStmt/parTitl<span
+class="math display">\[@xml:lang\]</span></td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left">dataset</td>
+<td align="left">Information about the data file(s) that comprises a
+collection.</td>
+<td align="left">//codeBook/fileDscr</td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Provides descriptive information about the data
+file.</td>
+<td align="left">//codeBook/fileDscr/fileTxt</td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="odd">
+<td align="left">dataset name</td>
+<td align="left">Contains a short title that will be used to distinguish
+a particular file/part from other files/parts in the data
+collection.</td>
+<td align="left">//codeBook/fileDscr/fileTxt/fileName</td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">The complex element fileCitation provides for a full
+bibliographic citation option for each data file described in fileDscr.
+To support accurate citation of a data file the minimum element set
+includes: titl, IDNo, authEnty, producer, and prodDate.</td>
+<td align="left">//codeBook/fileDscr/fileTxt/fileCitation</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Title statement for the work.</td>
+<td align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt</td>
+<td align="left">optional</td>
+</tr>
+<tr class="even">
+<td align="left">dataset label</td>
+<td align="left">Full authoritative title for the work (…) A full title
+should indicate the geographic scope of the data collection as well as
+the time period covered.</td>
+<td
+align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt/titl</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left">language tag</td>
+<td align="left">Attribute to specify the language of the
+<dataset label>. &lt;Use ISO-639-1-Code for language subtags, e.g. en
+for English.&gt;</td>
+<td
+align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt/titl<span
+class="math display">\[@xml:lang\]</span></td>
+<td align="left">mandatory if ‚titl‘ element is present</td>
+</tr>
+<tr class="even">
+<td align="left">parallel dataset label</td>
+<td align="left">Title translated into another language.</td>
+<td
+align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt/parTitl</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left">language tag</td>
+<td align="left">Attribute to specify the language of the
+<dataset label>. &lt;Use ISO-639-1-Code for language subtags, e.g. en
+for English.&gt;</td>
+<td
+align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt/parTitl<span
+class="math display">\[@xml:lang\]</span></td>
+<td align="left">mandatory if ‚parTitl‘ element is present</td>
+</tr>
+<tr class="even">
+<td align="left">dataset description</td>
+<td align="left">Abstract or description of the file. A summary
+describing the purpose, nature, and scope of the data file, special
+characteristics of its contents, major subject areas covered, and what
+questions the PIs attempted to answer when they created the file.</td>
+<td align="left">//codeBook/fileDscr/fileTxt/fileCont</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left">language tag</td>
+<td align="left">Attribute to specify the language of the
+<dataset description>. &lt;Use ISO-639-1-Code for language subtags,
+e.g. en for English.&gt;</td>
+<td align="left">//codeBook/fileDscr/fileTxt/fileCont<span
+class="math display">\[@xml:lang\]</span></td>
+<td align="left">mandatory if ‘fileCont’ element is present</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">For clarifying information/annotation regarding the
+<dataset>.</td>
+<td align="left">//codeBook/fileDscr/fileTxt/notes</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">This element permits encoders to provide links from any
+arbitrary element containing ExtLink as a subelement to electronic
+resources outside the codebook.</td>
+<td align="left">//codeBook/fileDscr/fileTxt/notes/ExtLink</td>
+<td align="left">optional</td>
+</tr>
+<tr class="even">
+<td align="left">dataset url</td>
+<td align="left">Attribute to provide an URL for more detailed
+information on the dataset.</td>
+<td align="left">//codeBook/fileDscr/fileTxt/notes/ExtLink<span
+class="math display">\[@URI\]</span></td>
+<td align="left">mandatory if ‘ExtLink’ element is present</td>
+</tr>
+<tr class="odd">
+<td align="left">variables</td>
+<td align="left">Description of variables.</td>
+<td align="left">//codeBook/dataDscr</td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="even">
+<td align="left">variable</td>
+<td align="left">This element describes all of the features of a single
+variable in a social science data file.</td>
+<td align="left">//codeBook/dataDscr/var</td>
+<td align="left">mandatory</td>
+</tr>
+<tr class="odd">
+<td align="left">variable name</td>
+<td align="left">The attribute “name” usually contains the so-called
+“short label” for the variable, limited to eight characters in many
+statistical analysis systems such as SAS or SPSS.</td>
+<td align="left">//codeBook/dataDscr/var<span
+class="math display">\[@name\]</span></td>
+<td align="left">mandatory if ‚var‘ element is present</td>
+</tr>
+<tr class="even">
+<td align="left">variable label</td>
+<td align="left">A short description of the variable. In the variable
+label, the length of this phrase may depend on the statistical analysis
+system used (e.g., some versions of SAS permit 40-character labels,
+while some versions of SPSS permit 120 characters), although the DDI
+itself imposes no restrictions on the number of characters allowed.</td>
+<td align="left">//codeBook/dataDscr/var/labl</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left">language tag</td>
+<td align="left">Attribute to specify the language of the
+<variable label>. &lt;Use ISO-639-1-Code for language subtags, e.g. en
+for English.&gt;</td>
+<td align="left">//codeBook/dataDscr/var/labl<span
+class="math display">\[@xml:lang\]</span></td>
+<td align="left">mandatory if ‚labl‘ element is present</td>
+</tr>
+<tr class="even">
+<td align="left">variable description</td>
+<td align="left">Lengthier description of the variable.</td>
+<td align="left">//codeBook/dataDscr/var/txt</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left">language tag</td>
+<td align="left">Attribute to specify the language of the
+<variable description>. &lt;Use ISO-639-1-Code for language subtags,
+e.g. en for English.&gt;</td>
+<td align="left">//codeBook/dataDscr/var/txt<span
+class="math display">\[@xml:lang\]</span></td>
+<td align="left">mandatory if ‘txt’ element is present</td>
+</tr>
+<tr class="even">
+<td align="left">category</td>
+<td align="left">A description of a particular response.</td>
+<td align="left">//codeBook/dataDscr/var/catgry</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left">category values</td>
+<td align="left">The explicit response.</td>
+<td align="left">//codeBook/dataDscr/var/catgry/catValue</td>
+<td align="left">mandatory if ‘catgry’ element is present</td>
+</tr>
+<tr class="even">
+<td align="left">category labels</td>
+<td align="left">A short description of the <category values>.</td>
+<td align="left">//codeBook/dataDscr/var/catgry/labl</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left">language tag</td>
+<td align="left">Attribute to specify the language of the
+<category labels>. &lt;Use ISO-639-1-Code for language subtags, e.g. en
+for English.&gt;</td>
+<td align="left">//codeBook/dataDscr/var/catgry/labl<span
+class="math display">\[@xml:lang\]</span></td>
+<td align="left">mandatory if ‘labl’ element is present</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">The technical format of the variable in question.</td>
+<td align="left">//codeBook/dataDscr/var/varFormat</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left">variable type</td>
+<td align="left">Attributes for this element include: “type,” which
+indicates if the variable is character or numeric;</td>
+<td align="left">//codeBook/dataDscr/var/varFormat<span
+class="math display">\[@type\]</span></td>
+<td align="left">mandatory if ‚varFormat‘ element is present</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">For clarifying information/annotation regarding the
+<variable>.</td>
+<td align="left">//codeBook/dataDscr/var/notes</td>
+<td align="left">optional</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">This element permits encoders to provide links from any
+arbitrary element containing ExtLink as a subelement to electronic
+resources outside the codebook.</td>
+<td align="left">//codeBook/dataDscr/var/notes/ExtLink</td>
+<td align="left">optional</td>
+</tr>
+<tr class="even">
+<td align="left">variable url</td>
+<td align="left">Attribute to provide an URL for more detailed
+information on the variable.</td>
+<td align="left">//codeBook/dataDscr/var/notes/ExtLink<span
+class="math display">\[@URI\]</span></td>
+<td align="left">mandatory if ‘ExtLink’ element is present</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<footer>
+  <p>Copyright &copy; 2024 Open Data Format. All rights reserved.</p>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

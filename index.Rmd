@@ -1,0 +1,68 @@
+---
+title: '<img src="images/odf icon long.png" alt="Icon" style="height:150px;"/>'
+output: html_document
+---
+
+------------------------------------------------------------------------
+
+### The Open Data Format
+
+The Open Data Format (ODF) is a new, non-proprietary, multilingual, 
+metadata enriched, and zip-compressed data format. 
+The ODF meets the FAIR Guiding Principles for scientific data management 
+and stewardship.
+
+A data file in the Open Data Format has the ".zip"-extension. It is
+a zip-compressed folder containing the raw dataset in a comma-seperated 
+file (CSV) and the metadata in an XML-file structured in the DDI Codebook 
+metadata standard. For further information on the specification of the 
+Open Data Format you can read the [Specification](specification.html)
+
+To work with data files in the Open Data Format the [R Package opendataformat](r-package.html) and the 
+[Stata package opendf](stata-package.html) are available at the moment. 
+A python package is in the making.
+
+Manuals for generating data files in ODF can be found on 
+[GitHub](https://github.com/opendataformat/Specification/tree/main/Generating%20Open%20Data%20Format) for Stata, R and Python.
+
+
+
+
+### About the Project
+
+Researchers in the social sciences use various software for statistical
+analysis of rectangular, structured data (e.g., Stata, R). Each software
+has a specific data format that is only partially compatible, if at all,
+with other software solutions. The non-interoperability of data formats
+is an obstacle to replication studies and data-reuse. It undermines the
+FAIR principles and is not in line with the idea of open science. To
+meet the needs of data users, data producers offer a variety of data
+formats by doing a lot of redundant work, which is error-prone and leads
+to increasing costs. Furthermore, there is not only a demand for
+different data formats but also for material that describes the data;
+this includes, for example, study descriptions, method reports,
+codebooks, or questionnaires. As of now, it is common practice for
+scientists to have to leave their statistical software environment to
+search for supplementary material while performing the analysis of their
+data, as this material is often accessible through external data
+portals. This practice is inconvenient and prone to errors.
+
+The open, metadata-enriched, non-proprietary data dissemination format
+(ODF) is a project of KonsortSWD, the NFDI consortium for the social,
+behavioural, educational and economic sciences to develop a data format 
+that adheres to the FAIR Guiding Principles for scientific data management 
+and stewardship.The project includes three main work aspects:
+
+1.  The specification of a new open data format and the documentation of 
+    the specifications’ development is the core work
+    that runs through the entire project. We start with a minimal but
+    scalable specification and aim to evolve it into a specification
+    that is suitable for a wide range of use cases.
+2.  For a new data format to be usable with existing statistical software, the
+    project develops statistical packages with import and export filters 
+    for a selection of software programs (Stata, R) to use the ODF 
+    within the software. 
+3.  Promote the new data format to bring it in widespread use by various 
+    research data centers and other data providers.
+    
+The result of the project is the Open Data Format (ODF)

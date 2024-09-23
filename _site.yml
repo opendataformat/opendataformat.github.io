@@ -1,0 +1,26 @@
+name: "Open Data Format"
+navbar:
+  title: " Open Data Format - ODF"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Specification"
+      href: specification.html
+    - text: "Metadata Profile"
+      href: profile.html
+    - text: "R-Package opendataformat"
+      href: r-package.html
+    - text: "Stata Package opendf"
+      href: stata-package.html
+
+  right: 
+    - icon: fa-envelope fa-lg
+      href: mailto:thartl@diw.de
+    - icon: fa-github fa-lg
+      href: http://github.com/opendataformat/
+output:
+  html_document:
+    theme: yeti
+    include: 
+      after_body: footer.html
+    css: styles.css
