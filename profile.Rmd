@@ -1,11 +1,11 @@
 ---
-title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format</span>'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format: Profile</span>'
 output: html_document
 ---
 
 ------------------------------------------------------------------------
 
--   [Introduction](#introduction)
+-   [Metadata Profile](#the-metadata-profile-of-the-open-data-format)
 -   [Explanation](#explanation)
     -   [Mandatory Constraint](#mandatory-constraint)
     -   [Optional Constraint](#optional-constraint)
@@ -14,8 +14,9 @@ output: html_document
 
 ------------------------------------------------------------------------
 
-# Open Data Format: Profile
+<br>
 
+## The Metadata Profile of the Open Data Format
 The Open Data Format (ODF) profile gives an overview of the metadata 
 elements’ and attributes’ semantic definition and constraints. The 
 documentation of the metadata specification is the basis for the 

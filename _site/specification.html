@@ -11,7 +11,7 @@
 
 
 
-<title> Open Data Format</title>
+<title> Open Data Format: Specification</title>
 
 <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -34,6 +34,38 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<!-- header.html -->
+<link rel="icon" href="images/odf_icon_transparent.ico" type="image/x-icon">
+
+<style>
+    .navbar {
+        display: flex; /* Use flexbox for the navbar */
+        align-items: center; /* Center items vertically */
+        padding: 10px; /* Add padding for vertical space */
+    }
+
+    .navbar-brand {
+        display: flex; /* Use flexbox for the brand */
+        align-items: center; /* Center items vertically */
+    }
+
+    .navbar-brand img {
+        height: 150px;  /* Set the height of the icon */
+        max-height: 150px; /* Ensure it doesn't exceed the navbar height */
+        width: auto; /* Maintain aspect ratio */
+        margin-right: 10px;  /* Space between icon and text */
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const navbarBrand = document.querySelector('.navbar-brand');
+        const icon = document.createElement('img');
+        icon.src = 'images/odf_icon_long_white2_transparent.ico';  // Adjust this path if necessary
+        icon.alt = 'ODF Icon';  // Alt text for accessibility
+        navbarBrand.prepend(icon);
+    });
+</script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -241,10 +273,13 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Open Data Format - ODF</a>
+      <a class="navbar-brand" href="index.html"></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="index.html">Home</a>
 </li>
@@ -255,14 +290,12 @@ $(document).ready(function () {
   <a href="profile.html">Metadata Profile</a>
 </li>
 <li>
-  <a href="r-package.html">R-Package opendataformat</a>
+  <a href="r-package.html">R Package</a>
 </li>
 <li>
-  <a href="stata-package.html">Stata Package opendf</a>
+  <a href="stata-package.html">Stata Package</a>
 </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
+<li>
   <a href="mailto:thartl@diw.de">
     <span class="fa fa-envelope fa-lg"></span>
      
@@ -285,21 +318,16 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore"><img src="images/odf%20icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/>
 <span
-style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open
-Data Format</span></h1>
+style="color: #156082; font-weight: bold; position: relative; top: 10px;">Open
+Data Format: Specification</span></h1>
 
 </div>
 
 
 <hr />
-<ul>
-<li><a href="#specification">Specification</a></li>
-<li><a href="#profile">Profile</a></li>
-</ul>
-<hr />
-<div id="specification-of-the-open-data-format-odf"
-class="section level1">
-<h1>Specification of the Open Data Format (ODF)</h1>
+<p><br></p>
+<div id="specification-of-the-open-data-format" class="section level2">
+<h2>Specification of the Open Data Format</h2>
 <p>The Open Data Format (ODF) is dedicated to providing a
 non-proprietary data format for data exchange and dissemination. In
 other words, it is the data format that data producers can provide while
@@ -320,6 +348,7 @@ existing metadata schemas.</p>
 Specification of a data file in the Open Data Format
 </p>
 <p><br></p>
+</div>
 <div id="profile" class="section level2">
 <h2>Profile</h2>
 <p>For the specification of a data format’s metadata component, a
@@ -415,7 +444,6 @@ validate against the ODF profil (<a
 href="files/profile.xml">profile.xml</a>). For further information on
 the metadata profile, see <a href="profile.html">Profile</a>.</p>
 <p><br><br></p>
-</div>
 </div>
 
 <footer>

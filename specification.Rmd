@@ -1,16 +1,13 @@
 ---
-title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format</span>'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format: Specification</span>'
 output: html_document
 ---
 
 ------------------------------------------------------------------------
 
--   [Specification](#specification)
--   [Profile](#profile)
+<br>
 
-------------------------------------------------------------------------
-
-# Specification of the Open Data Format (ODF)
+## Specification of the Open Data Format
 
 The Open Data Format (ODF) is dedicated to providing a non-proprietary data
 format for data exchange and dissemination. In other words, it is the

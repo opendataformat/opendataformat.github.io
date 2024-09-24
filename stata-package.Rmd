@@ -1,5 +1,5 @@
 ---
-title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format</span>'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="color: #156082; font-weight: bold; position: relative; top: 10px;">Stata Package</span>'
 output: html_document
 ---
 
@@ -15,7 +15,9 @@ output: html_document
 
 ------------------------------------------------------------------------
 
-# Stata Package opendf
+<br>
+
+## Stata Package opendf
 
 The `opendf` package is specifically designed to facilitate the seamless utilization of the Open Data Format. 
 It offers functionality to import data from the Open Data Format into a Stata data frame, as well as export data from a Stata data frame (.dta) to the Open Data Format. 
@@ -26,10 +28,17 @@ This user-friendly approach ensures convenient exploration and utilization of da
 
 ## Installation
 
+The Stata package can be installed from SSC using the command `ssc install`.
 ``` Stata
-* At this point you can install the development version from github:
-net install opendf, from (https://opendataformat.github.io/stata-package-opendf/) replace
+* Install the package from ssc:
+ssc install opendf
 
+```
+
+Alternatively the development version can be installed from GitHub.
+``` Stata
+* Install the development version from GitHub:
+net install opendf, from (https://opendataformat.github.io/stata-package-opendf/) replace
 
 ```
 

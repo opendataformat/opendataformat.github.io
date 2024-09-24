@@ -1,11 +1,13 @@
 ---
-title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format</span>'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="color: #156082; font-weight: bold; position: relative; top: 10px;">The Open Data Format</span>'
 output: html_document
 ---
 
 ------------------------------------------------------------------------
 
-# The Open Data Format
+<br>
+
+## Introducing the Open Data Format
 
 The Open Data Format (ODF) is a new, non-proprietary, multilingual, 
 metadata enriched, and zip-compressed data format. 

@@ -1,5 +1,5 @@
 ---
-title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format</span>'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="color: #156082; font-weight: bold; position: relative; top: 10px;">R-Package</span>'
 output: html_document
 ---
 
@@ -13,7 +13,9 @@ output: html_document
 
 ------------------------------------------------------------------------
 
-# R-Package opendataformat
+<br>
+
+## R-Package opendataformat
 
 The `opendataformat` package is specifically designed to facilitate the seamless utilization of the Open Data Format. 
 It offers functionality to import data from the Open Data Format into an R data frame, as well as export data from an R data frame to the Open Data Format. 
@@ -31,28 +33,25 @@ Learn more about the Open Data Format in R in `vignette("opendataformat")`.
 
 ## Installation
 
+At this point the R package can be installed from Zenodo.
+
 ``` r
+# Install the latest version of the opendataformat package from Zenodo:
+install.packages("https://zenodo.org/records/13683314/files/opendataformat_1.2.1.tar.gz",
+                 repos=NULL, method="libcurl")
+```
 
-# At this point you can download and install the the latest version of the opendataformat package from Zenodo:
-download.file("https://zenodo.org/records/12917713/files/opendataformat_1.1.1.tar.gz?download=1", destfile = paste0(tempdir(), "/", "opendataformat_1.1.1.tar.gz"), method = "curl")
-install.packages(paste0(tempdir(), "/", "opendataformat_1.1.1.tar.gz"), repos = NULL, type = "source")
+Alternatively the development version can be installed from GitHub.
 
-
-# Alternatively you can install the development version from Gitlab:
+``` r
+# Install development version from GitHub:
 # install.packages("devtools")
-devtools::install_git("https://git.soep.de/opendata/r-package-opendataformat.git")
-
-
-
+devtools::install_git("https://github.com/opendataformat/r-package-opendataformat.git")
 ```
 
 <br>
 
 ## Getting Started
-
-``` r
-library("opendataformat")
-```
 
 The opendataformat package consists of five main functions:
 
