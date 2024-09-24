@@ -1,5 +1,5 @@
 ---
-title: '<img src="images/odf icon long.png" alt="Icon" style="height:150px;"/>'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format</span>'
 output: html_document
 ---
 
@@ -9,8 +9,7 @@ output: html_document
 -   [Explanation](#explanation)
     -   [Mandatory Constraint](#mandatory-constraint)
     -   [Optional Constraint](#optional-constraint)
-    -   [Mandatory if parent element is present
-        Constraint](#mandatory-if-parent-element-is-present-constraint)
+    -   [Mandatory if parent element is present Constraint](#mandatory-if-parent-element-is-present-constraint)
 -   [Complete Profile View](#complete-profile-view)
 
 ------------------------------------------------------------------------
@@ -57,7 +56,7 @@ documentation” of the DDI-Codebook 2.5 schema
 passages we have adapted or supplemented and made the changes notable by
 marking them with the characters &lt;*modyfied text*&gt;.
 
-# Explanation
+## Explanation
 
 The ODF profile holds a set of constrains that use Xpath
 syntax to define the usage of elements and attributes. The Xpath syntax
@@ -105,7 +104,7 @@ Code 1: Respective XML Code for the example presented in Table 1.
 
 <!-- -------------------- -->
 
-## Optional Constraint
+### Optional Constraint
 
 The metadata specification of the Open Data Format allows providing a
 lengthier description of a variable that goes beyond the variable label.
@@ -133,7 +132,7 @@ Code 2: Respective XML Code for the example presented in Table 2.
 
 <!-- -------------------- -->
 
-## Mandatory if parent element is present Constraint
+### Mandatory if parent element is present Constraint
 
 The metadata specification of the Open Data Format supports
 multi-lingual labels and descriptions for several dataset elements like
@@ -168,7 +167,7 @@ Code 3: Respective XML Code for the example presented in Table 3.
 
 <!-- -------------------- -->
 
-# Complete Profile View
+## Complete Profile View
 
 | element.label        | element.description                                                                                                                                                                                                                                                                                                                       | xml file                                                            | xml\_classification                         |
 |:---------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|:--------------------------------------------|
@@ -215,3 +214,4 @@ Code 3: Respective XML Code for the example presented in Table 3.
 |                      | This element permits encoders to provide links from any arbitrary element containing ExtLink as a subelement to electronic resources outside the codebook.                                                                                                                                                                                | //codeBook/dataDscr/var/notes/ExtLink                               | optional                                    |
 | variable url         | Attribute to provide an URL for more detailed information on the variable.                                                                                                                                                                                                                                                                | //codeBook/dataDscr/var/notes/ExtLink\[@URI\]                       | mandatory if ‘ExtLink’ element is present   |
 
+<br><br>

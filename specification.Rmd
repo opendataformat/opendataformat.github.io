@@ -1,5 +1,5 @@
 ---
-title: '<img src="images/odf icon long.png" alt="Icon" style="height:150px;"/>'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format</span>'
 output: html_document
 ---
 
@@ -83,3 +83,5 @@ this repository [metadata.xml](files/metadata.xml)) and
 validate against the ODF profil
 ([profile.xml](files/profile.xml)). For further information on the 
 metadata profile, see [Profile](profile.html).
+
+<br><br>

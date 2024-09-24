@@ -1,11 +1,11 @@
 ---
-title: '<img src="images/odf icon long.png" alt="Icon" style="height:150px;"/>'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format</span>'
 output: html_document
 ---
 
 ------------------------------------------------------------------------
 
-### The Open Data Format
+# The Open Data Format
 
 The Open Data Format (ODF) is a new, non-proprietary, multilingual, 
 metadata enriched, and zip-compressed data format. 
@@ -16,7 +16,7 @@ A data file in the Open Data Format has the ".zip"-extension. It is
 a zip-compressed folder containing the raw dataset in a comma-seperated 
 file (CSV) and the metadata in an XML-file structured in the DDI Codebook 
 metadata standard. For further information on the specification of the 
-Open Data Format you can read the [Specification](specification.html)
+Open Data Format you can read the [Specification](specification.html).
 
 To work with data files in the Open Data Format the [R Package opendataformat](r-package.html) and the 
 [Stata package opendf](stata-package.html) are available at the moment. 
@@ -28,7 +28,7 @@ Manuals for generating data files in ODF can be found on
 
 
 
-### About the Project
+## About the Project
 
 Researchers in the social sciences use various software for statistical
 analysis of rectangular, structured data (e.g., Stata, R). Each software
@@ -65,4 +65,7 @@ and stewardship.The project includes three main work aspects:
 3.  Promote the new data format to bring it in widespread use by various 
     research data centers and other data providers.
     
-The result of the project is the Open Data Format (ODF)
+The result of the project is the Open Data Format (ODF).
+
+<br><br>
+

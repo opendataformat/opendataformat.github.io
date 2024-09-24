@@ -1,11 +1,11 @@
 ---
-title: 'R-Package opendataformat'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format</span>'
 output: html_document
 ---
 
 ------------------------------------------------------------------------
 
--   [Overview](#overview)
+-   [Overview](#r-package-opendataformat)
 -   [Installation](#installation)
 -   [Getting Started](#getting-started)
 -   [Multilingual Datasets](#multilingual-datasets)
@@ -13,7 +13,7 @@ output: html_document
 
 ------------------------------------------------------------------------
 
-## Overview
+# R-Package opendataformat
 
 The `opendataformat` package is specifically designed to facilitate the seamless utilization of the Open Data Format. 
 It offers functionality to import data from the Open Data Format into an R data frame, as well as export data from an R data frame to the Open Data Format. 
@@ -78,3 +78,4 @@ Note that for the function `odf_labels()` you can specify only one language, the
 If you encounter a clear bug, please file a minimal reproducible example
 on [Github](https://github.com/opendataformat/r-package-opendataformat/issues). 
 
+<br><br>

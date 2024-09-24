@@ -1,6 +1,6 @@
 name: "Open Data Format"
 navbar:
-  title: " Open Data Format - ODF"
+  title: "Open Data Format - ODF"
   left:
     - text: "Home"
       href: index.html
@@ -20,6 +20,7 @@ navbar:
       href: http://github.com/opendataformat/
 output:
   html_document:
+    title: "Open Data Format"
     theme: yeti
     include: 
       after_body: footer.html

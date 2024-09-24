@@ -1,11 +1,11 @@
 ---
-title: 'Stata Package opendf'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open Data Format</span>'
 output: html_document
 ---
 
 ------------------------------------------------------------------------
 
--   [Overview](#overview)
+-   [Overview](#stata-package-opendf)
 -   [Installation](#installation)
 -   [Getting Started](#getting-started)
 -   [Additional Functions](#additional-functions)
@@ -15,7 +15,7 @@ output: html_document
 
 ------------------------------------------------------------------------
 
-## Overview
+# Stata Package opendf
 
 The `opendf` package is specifically designed to facilitate the seamless utilization of the Open Data Format. 
 It offers functionality to import data from the Open Data Format into a Stata data frame, as well as export data from a Stata data frame (.dta) to the Open Data Format. 
@@ -85,3 +85,4 @@ Additionally, you will have access to a practical example of a [data file in the
 If you encounter a clear bug, please file a minimal reproducible example
 on [github](https://github.com/opendataformat/stata-package-opendf/issues). 
 
+<br><br>
