@@ -27,6 +27,8 @@ Additionally, you will have access to a practical example of [real data in the O
 
 Learn more about the Open Data Format in R in `vignette("opendataformat")`.
 
+<br>
+
 ## Installation
 
 ``` r
@@ -43,6 +45,8 @@ devtools::install_git("https://git.soep.de/opendata/r-package-opendataformat.git
 
 
 ```
+
+<br>
 
 ## Getting Started
 
@@ -62,6 +66,8 @@ The opendataformat package consists of five main functions:
 
 - `odf_labels()` to retrieve labels and other metadata from an odf-data.frame-object.
 
+<br>
+
 ## Multilingual Datasets
 
 When working with a multilingual dataset, the `opendataformatr` package provides the option to specify the language you want to work with for the main functions: `read_odf()`, `docu_odf()`, `write_odf()`, and `odf_labels()`.
@@ -72,6 +78,7 @@ This allows you to easily select the desired language for your dataset operation
 The language codes are defined by the [ISO 639-1](https://de.wikipedia.org/wiki/Liste_der_ISO-639-1-Codes).
 Note that for the function `odf_labels()` you can specify only one language, therefore the `language` argument only takes single languages as input.
 
+<br>
 
 ## Getting Help
 

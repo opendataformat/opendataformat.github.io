@@ -30,8 +30,9 @@ of the metadata component in the ODF. Besides the
 DDI-Codebook 2.5 schema, the ODF is to be extendable with
 further existing metadata schemas.
 
-<img src="images/img01.png" alt="Figure 2: Files of a dataset specified in the Open Data Format" style="margin-bottom: 20px;"><p style="text-align: right;">Figure 2: Files of a dataset specified in the Open Data Format</p>
+<img src="images/img01.png" alt="Specification of a data file in the Open Data Format" style="margin-bottom: 20px;"><p style="text-align: right;">Specification of a data file in the Open Data Format</p>
 
+<br>
 
 ## Profile
 

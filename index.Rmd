@@ -25,8 +25,7 @@ A python package is in the making.
 Manuals for generating data files in ODF can be found on 
 [GitHub](https://github.com/opendataformat/Specification/tree/main/Generating%20Open%20Data%20Format) for Stata, R and Python.
 
-
-
+<br>
 
 ## About the Project
 

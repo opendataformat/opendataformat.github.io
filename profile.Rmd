@@ -56,6 +56,8 @@ documentation” of the DDI-Codebook 2.5 schema
 passages we have adapted or supplemented and made the changes notable by
 marking them with the characters &lt;*modyfied text*&gt;.
 
+<br>
+
 ## Explanation
 
 The ODF profile holds a set of constrains that use Xpath
@@ -73,6 +75,8 @@ the section [Overview](#overview) or take a look at the [XML profile CSV
 file](profile_view.csv). The XML file of the ODF metadata
 profile, you can find under [profile.xml](profile.xml) in this
 directory.
+
+<br>
 
 ## Mandatory Constraint
 
@@ -104,6 +108,8 @@ Code 1: Respective XML Code for the example presented in Table 1.
 
 <!-- -------------------- -->
 
+<br>
+
 ### Optional Constraint
 
 The metadata specification of the Open Data Format allows providing a
@@ -131,6 +137,8 @@ Profile.
 Code 2: Respective XML Code for the example presented in Table 2.
 
 <!-- -------------------- -->
+
+<br>
 
 ### Mandatory if parent element is present Constraint
 
@@ -166,6 +174,8 @@ constraint within the ODF Profile.
 Code 3: Respective XML Code for the example presented in Table 3.
 
 <!-- -------------------- -->
+
+<br>
 
 ## Complete Profile View
 
