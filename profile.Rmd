@@ -79,7 +79,7 @@ directory.
 
 <br>
 
-## Mandatory Constraint
+### Mandatory Constraint
 
 The function of the `var` node is to hold multiple pieces of information
 describing a variable at different hierarchical levels. Since a dataset
@@ -141,7 +141,7 @@ Code 2: Respective XML Code for the example presented in Table 2.
 
 <br>
 
-### Mandatory if parent element is present Constraint
+### Mandatory if Parent Element is Present - Constraint
 
 The metadata specification of the Open Data Format supports
 multi-lingual labels and descriptions for several dataset elements like

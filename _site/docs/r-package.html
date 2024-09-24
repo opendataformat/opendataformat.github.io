@@ -11,7 +11,7 @@
 
 
 
-<title> Open Data Format</title>
+<title> R-Package</title>
 
 <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -34,6 +34,38 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<!-- header.html -->
+<link rel="icon" href="images/odf_icon_transparent.ico" type="image/x-icon">
+
+<style>
+    .navbar {
+        display: flex; /* Use flexbox for the navbar */
+        align-items: center; /* Center items vertically */
+        padding: 10px; /* Add padding for vertical space */
+    }
+
+    .navbar-brand {
+        display: flex; /* Use flexbox for the brand */
+        align-items: center; /* Center items vertically */
+    }
+
+    .navbar-brand img {
+        height: 150px;  /* Set the height of the icon */
+        max-height: 150px; /* Ensure it doesn't exceed the navbar height */
+        width: auto; /* Maintain aspect ratio */
+        margin-right: 10px;  /* Space between icon and text */
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const navbarBrand = document.querySelector('.navbar-brand');
+        const icon = document.createElement('img');
+        icon.src = 'images/odf_icon_long_white2_transparent.ico';  // Adjust this path if necessary
+        icon.alt = 'ODF Icon';  // Alt text for accessibility
+        navbarBrand.prepend(icon);
+    });
+</script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -241,10 +273,13 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Open Data Format - ODF</a>
+      <a class="navbar-brand" href="index.html"></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="index.html">Home</a>
 </li>
@@ -255,14 +290,12 @@ $(document).ready(function () {
   <a href="profile.html">Metadata Profile</a>
 </li>
 <li>
-  <a href="r-package.html">R-Package opendataformat</a>
+  <a href="r-package.html">R Package</a>
 </li>
 <li>
-  <a href="stata-package.html">Stata Package opendf</a>
+  <a href="stata-package.html">Stata Package</a>
 </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
+<li>
   <a href="mailto:thartl@diw.de">
     <span class="fa fa-envelope fa-lg"></span>
      
@@ -285,8 +318,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore"><img src="images/odf%20icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/>
 <span
-style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open
-Data Format</span></h1>
+style="color: #156082; font-weight: bold; position: relative; top: 10px;">R-Package</span></h1>
 
 </div>
 
@@ -300,8 +332,9 @@ Data Format</span></h1>
 <li><a href="#getting-help">Getting Help</a></li>
 </ul>
 <hr />
-<div id="r-package-opendataformat" class="section level1">
-<h1>R-Package opendataformat</h1>
+<p><br></p>
+<div id="r-package-opendataformat" class="section level2">
+<h2>R-Package opendataformat</h2>
 <p>The <code>opendataformat</code> package is specifically designed to
 facilitate the seamless utilization of the Open Data Format. It offers
 functionality to import data from the Open Data Format into an R data
@@ -323,25 +356,22 @@ Open Data Format</a>.</p>
 <p>Learn more about the Open Data Format in R in
 <code>vignette("opendataformat")</code>.</p>
 <p><br></p>
+</div>
 <div id="installation" class="section level2">
 <h2>Installation</h2>
-<pre class="r"><code>
-# At this point you can download and install the the latest version of the opendataformat package from Zenodo:
-download.file(&quot;https://zenodo.org/records/12917713/files/opendataformat_1.1.1.tar.gz?download=1&quot;, destfile = paste0(tempdir(), &quot;/&quot;, &quot;opendataformat_1.1.1.tar.gz&quot;), method = &quot;curl&quot;)
-install.packages(paste0(tempdir(), &quot;/&quot;, &quot;opendataformat_1.1.1.tar.gz&quot;), repos = NULL, type = &quot;source&quot;)
-
-
-# Alternatively you can install the development version from Gitlab:
+<p>At this point the R package can be installed from Zenodo.</p>
+<pre class="r"><code># Install the latest version of the opendataformat package from Zenodo:
+install.packages(&quot;https://zenodo.org/records/13683314/files/opendataformat_1.2.1.tar.gz&quot;,
+                 repos=NULL, method=&quot;libcurl&quot;)</code></pre>
+<p>Alternatively the development version can be installed from
+GitHub.</p>
+<pre class="r"><code># Install development version from GitHub:
 # install.packages(&quot;devtools&quot;)
-devtools::install_git(&quot;https://git.soep.de/opendata/r-package-opendataformat.git&quot;)
-
-
-</code></pre>
+devtools::install_git(&quot;https://github.com/opendataformat/r-package-opendataformat.git&quot;)</code></pre>
 <p><br></p>
 </div>
 <div id="getting-started" class="section level2">
 <h2>Getting Started</h2>
-<pre class="r"><code>library(&quot;opendataformat&quot;)</code></pre>
 <p>The opendataformat package consists of five main functions:</p>
 <ul>
 <li><p><code>read_odf()</code> to read an Open Data Format file in R.
@@ -391,7 +421,6 @@ only takes single languages as input.</p>
 example on <a
 href="https://github.com/opendataformat/r-package-opendataformat/issues">Github</a>.</p>
 <p><br><br></p>
-</div>
 </div>
 
 <footer>
