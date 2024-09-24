@@ -11,12 +11,12 @@
 
 
 
-<title> Open Data Format</title>
+<title> The Open Data Format</title>
 
 <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -60,7 +60,6 @@ if (window.hljs) {
 
 
 
-<link rel="stylesheet" href="styles.css" type="text/css" />
 
 
 
@@ -283,145 +282,76 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore"><img src="images/odf%20icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/>
-<span
-style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open
-Data Format</span></h1>
+<h1 class="title toc-ignore"><img src="images/odf%20icon.png" alt="Icon" style="width:70px;"/>
+The Open Data Format</h1>
 
 </div>
 
 
 <hr />
 <ul>
-<li><a href="#stata-package-opendf">Overview</a></li>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#additional-functions">Additional Functions</a></li>
-<li><a href="#multilingual-datasets">Multilingual Datasets</a></li>
-<li><a href="#further-information">Further Information</a></li>
-<li><a href="#getting-help">Getting Help</a></li>
+<li><a href="#about-the-project">About the Project</a></li>
+<li><a href="#the-open-data-format">The Open Data Format</a></li>
 </ul>
 <hr />
-<div id="stata-package-opendf" class="section level1">
-<h1>Stata Package opendf</h1>
-<p>The <code>opendf</code> package is specifically designed to
-facilitate the seamless utilization of the Open Data Format. It offers
-functionality to import data from the Open Data Format into a Stata data
-frame, as well as export data from a Stata data frame (.dta) to the Open
-Data Format. Additionally, you can easily access comprehensive
-information about the dataset and variables. This user-friendly approach
-ensures convenient exploration and utilization of dataset information
-within your preferred environment.</p>
-<p><br></p>
-<div id="installation" class="section level2">
-<h2>Installation</h2>
-<pre class="stata"><code>* At this point you can install the development version from github:
-net install opendf, from (https://opendataformat.github.io/stata-package-opendf/) replace
-
-</code></pre>
-<p><br></p>
+<div id="about-the-project" class="section level2">
+<h2>About the Project</h2>
+<p>Researchers in the social sciences use various software for
+statistical analysis of rectangular, structured data (e.g., Stata, R).
+Each software has a specific data format that is only partially
+compatible, if at all, with other software solutions. The
+non-interoperability of data formats is an obstacle to replication
+studies and data-reuse. It undermines the FAIR principles and is not in
+line with the idea of open science. To meet the needs of data users,
+data producers offer a variety of data formats by doing a lot of
+redundant work, which is error-prone and leads to increasing costs.
+Furthermore, there is not only a demand for different data formats but
+also for material that describes the data; this includes, for example,
+study descriptions, method reports, codebooks, or questionnaires. As of
+now, it is common practice for scientists to have to leave their
+statistical software environment to search for supplementary material
+while performing the analysis of their data, as this material is often
+accessible through external data portals. This practice is inconvenient
+and prone to errors.</p>
+<p>The open, metadata-enriched, non-proprietary data dissemination
+format (ODF) is a project of KonsortSWD, the NFDI consortium for the
+social, behavioural, educational and economic sciences to develop a data
+format that adheres to the FAIR Guiding Principles for scientific data
+management and stewardship.The project includes three main work
+aspects:</p>
+<ol style="list-style-type: decimal">
+<li>The specification of a new open data format and the documentation of
+the specifications’ development is the core work that runs through the
+entire project. We start with a minimal but scalable specification and
+aim to evolve it into a specification that is suitable for a wide range
+of use cases.</li>
+<li>For a new data format to be usable with existing statistical
+software, the project develops statistical packages with import and
+export filters for a selection of software programs (Stata, R) to use
+the ODF within the software.</li>
+<li>Promote the new data format to bring it in widespread use by various
+research data centers and other data providers.</li>
+</ol>
+<p>The result of the project is the Open Data Format (ODF)</p>
 </div>
-<div id="getting-started" class="section level2">
-<h2>Getting Started</h2>
-<p>The opendataformat package consists of three main functions:</p>
-<ul>
-<li><p><code>opendf read</code> to read an Open Data Format file in
-Stata. This function takes an input parameter, which is the path to the
-Open Data Format ZIP file.</p></li>
-<li><p><code>opendf docu</code> to explore the dataset information. You
-can display metadata for the whole dataset using
-<code>opendf docu</code> or an selected variable
-<code>opendf docu variable</code>.</p></li>
-<li><p><code>opendf write</code> to write the Stata data frame to an
-Open Data Format ZIP file. By specifying the dataframe input and
-providing the output directory path the function will generate a ZIP
-file containing the dataset stored in a “data.csv” and the metadata
-stored in a “metadata.xml”.</p></li>
-</ul>
-<pre class="stata"><code>* You can load a dataset in opendf-format with opendf_read by specifying the path to the zip-folder, (in this case, the testdataset from github):
-opendf read &quot;https://opendataformat.github.io/stata-package-opendf/example_data/soep_data.zip&quot;, clear verbose
-</code></pre>
-<p><br></p>
-</div>
-<div id="additional-functions" class="section level2">
-<h2>Additional Functions</h2>
-<p>The opendataformat package provides further functions that might be
-helpful:</p>
-<ul>
-<li><p><code>opendf installpython</code> will install a python version
-that enables the opendf-package to work. Some functions
-(<code>opendf read</code> and <code>opendf write</code>) need a working
-python version on your PC. If Stata is not able to find a working python
-version, you can use this command to copy a python (default v3.12) to
-the Stata ado/plus folder (where Stata packages are stored). You can
-also specify the python version you want to install and specify a
-location where the folder with the python version should be deployed.
-But than you have to tell Stata manually where the python.exe is located
-using “set python_exec”.</p></li>
-<li><p><code>opendf removepython</code> will remove python versions
-installed with <code>opendf installpython</code>. By default the the
-command will delete all python3 folders/installations from the Stata ado
-folder (the default folder where <code>opendf installpython</code>
-deploys the python installation). With the <code>version()</code>-option
-can also specify which python version to remove. With the
-<code>location()</code>-option you can indicate where to delete the
-python folders from.</p></li>
-<li><p><code>opendf_csv2dta</code> to read data from four csvs
-containing data and metadata into Stata.</p></li>
-<li><p><code>opendf_csv2zip</code> to save data from four csvs
-containing data and metadata to a opendf-format (zip-folder containing
-data.csv and metadata.xml). The csvs consist of data.csv (raw data),
-dataset.csv (dataset metadata), varaibles.csv (variables metadata) and
-categories.csv (value labels for variables).</p></li>
-</ul>
-<p>For data providers the <code>opendf_csv2dta</code> and
-<code>opendf_csv2dta</code> functions might be interesting to convert
-their data to the opendf format.</p>
-<p><br></p>
-</div>
-<div id="multilingual-datasets" class="section level2">
-<h2>Multilingual Datasets</h2>
-<p>When working with a multilingual dataset, the
-<code>opendataformat</code> package provides the option to specify the
-language you want to work with for the main functions:
-<code>opendf read</code>, <code>opendf docu</code>,
-<code>opendf write</code>.</p>
-<p>You can achieve this by using the <code>languages</code> argument and
-setting it to either <code>all</code> to include all languages, or by
-specifying the language code such as <code>de</code> for German or
-<code>en</code> for English. This allows you to easily select the
-desired language for your dataset operations. Metadata without a
-language tag will be assigned to the language <code>default</code>. The
-language codes are defined by the <a
-href="https://de.wikipedia.org/wiki/Liste_der_ISO-639-1-Codes">ISO
-639-1</a>.</p>
-<p><br></p>
-</div>
-<div id="further-information" class="section level2">
-<h2>Further Information</h2>
-<p>For more comprehensive insights into the Open Data Format
-specification, read the <a href="specification.html">Open Data Format
-Specification</a>. This resource provides detailed documentation and
-profiles illustrating the storage locations of attributes within the
-Open Data Format, as well as within the native formats to which they
-will be converted.</p>
-<p>Additionally, you will have access to a practical example of a <a
-href="files/example_dataset.zip">data file in the Open Data
-Format</a>.</p>
-<p><br></p>
-</div>
-<div id="getting-help" class="section level2">
-<h2>Getting Help</h2>
-<p>If you encounter a clear bug, please file a minimal reproducible
-example on <a
-href="https://github.com/opendataformat/stata-package-opendf/issues">github</a>.</p>
-<p><br><br></p>
-</div>
+<div id="the-open-data-format" class="section level2">
+<h2>The Open Data Format</h2>
+<p>The Open Data Format (ODF) is a new, non-proprietary, multilingual,
+metadata enriched, and zip-compressed data format. The ODF meets the
+FAIR Guiding Principles for scientific data management and
+stewardship.</p>
+<p>A data file in the Open Data Format has the “.zip”-extension. It is a
+zip-compressed folder containing the raw dataset in a comma-seperated
+file (CSV) and the metadata in an XML-file structured in the DDI
+Codebook metadata standard. For further information on the specification
+of the Open Data Format you can read the <a
+href="specification.html">Specification</a></p>
+<p>To work with data files in the Open Data Format the <a
+href="r-package.html">R Package opendataformat</a> and the <a
+href="stata-package.html">Stata package opendf</a> are available at the
+moment. A python package is in the making.</p>
 </div>
 
-<footer>
-  <p>Copyright &copy; 2024 Open Data Format. All rights reserved.</p>
-</footer>
 
 
 
