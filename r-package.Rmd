@@ -25,7 +25,7 @@ This user-friendly approach ensures convenient exploration and utilization of da
 For more comprehensive insights into the Open Data Format specification, look at the [Specification](specification.html). 
 This resource provides detailed documentation and profiles illustrating the storage locations of attributes within the Open Data Format, as well as within the native formats to which they will be converted.
 
-Additionally, you can download a practical example of a data file in the Open Data Format (<a href="/docs/files/example_dataset.zip" download>example_dataset.zip</a>).
+Additionally, you can download a practical example of a data file in the Open Data Format (<a href="/files/example_dataset.zip" download>example_dataset.zip</a>).
 
 Learn more about the Open Data Format in R in `vignette("opendataformat")`.
 

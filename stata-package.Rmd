@@ -97,7 +97,7 @@ The language codes are defined by the [ISO 639-1](https://de.wikipedia.org/wiki/
 For more comprehensive insights into the Open Data Format specification, read the [Open Data Format Specification](specification.html). 
 This resource provides detailed documentation and profiles illustrating the storage locations of attributes within the Open Data Format, as well as within the native formats to which they will be converted.
 
-Additionally, you can download a practical example of a data file in the Open Data Format (<a href="/docs/files/example_dataset.zip" download>example_dataset.zip</a>).
+Additionally, you can download a practical example of a data file in the Open Data Format (<a href="/files/example_dataset.zip" download>example_dataset.zip</a>).
 
 <br>
 
