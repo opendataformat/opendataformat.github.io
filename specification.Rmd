@@ -72,10 +72,9 @@ metadata XML files ([CESSDA Metadata
 Validator](https://cmv.cessda.eu/#!validation)). The validator checks if
 the structure, semantics, or the mandatory or optional usage of tags
 within the metadata XML file corresponds to the declarations of the
-profile. Since we provide a profile XML 
-(<a href="/files/profile.xml" download>profile.xml</a>), you can use the CESSDA
-Metadata Validator to verify if your metadata is already interoperable
-with the metadata profile specified for the ODF. To test
+profile. Since we provide a (<a href="/files/profile.xml" download>DDI XML profile</a>), 
+you can use the CESSDA Metadata Validator to verify if your metadata is already 
+interoperable with the metadata profile specified for the ODF. To test
 the validator tool from CESSDA you can download the metadata file from
 this repository (<a href="/files/metadata.xml" download>metadata.xml</a>) and
 validate against the ODF profil
