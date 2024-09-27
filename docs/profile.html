@@ -328,7 +328,7 @@ Data Format: Profile</span></h1>
 <ul>
 <li><a href="#the-metadata-profile-of-the-open-data-format">Metadata
 Profile</a></li>
-<li><a href="#explanation">Explanation</a>
+<li><a href="#odf-ddi-profile">ODF DDI Profiles</a>
 <ul>
 <li><a href="#mandatory-constraint">Mandatory Constraint</a></li>
 <li><a href="#optional-constraint">Optional Constraint</a></li>
@@ -354,11 +354,11 @@ validating a metadata file. Data producers can check upfront whether
 their data product will work with the technical solutions developed in
 this project. For example, if you create an XML metadata file in the
 ODF-specification yourself, you can validate it. For this purpose you
-can use the <a href="profile.xml">XML profile</a> from this repository
-and upload it, together with your XML metadata file (e. g., from the <a
-href="../example/metadata.xml">example</a> folder) to the website of the
-<a href="https://cmv.cessda.eu/#!validation">CESSDA Metadata
-Validator</a>.</p>
+can use the (<a href="/docs/files/profile.xml" download>XML profile</a>)
+from this repository and upload it, together with your XML metadata file
+(<a href="/docs/files/metadata.xml" download>metadata.xml</a>) to the
+website of the <a href="https://cmv.cessda.eu/#!validation">CESSDA
+Metadata Validator</a>.</p>
 <p>The metadata component of the Open Data Format follows the
 DDI-Codebook 2.5 schema. As mentioned on the <a
 href="https://ddialliance.org/learn/resources/ddi-profiles">DDI Alliance
@@ -386,22 +386,21 @@ notable by marking them with the characters &lt;<em>modyfied
 text</em>&gt;.</p>
 <p><br></p>
 </div>
-<div id="explanation" class="section level2">
-<h2>Explanation</h2>
-<p>The ODF profile holds a set of constrains that use Xpath syntax to
-define the usage of elements and attributes. The Xpath syntax uses a
-path notation, like those used in URLs, for addressing parts of an XML
-document. There are three types of constrains for the usage of the
-nodes: <code>mandatory</code>, <code>optional</code>, and
+<div id="odf-ddi-profiles" class="section level2">
+<h2>ODF DDI Profiles</h2>
+<p>The <a href="/docs/files/profile.xml" download>DDI XML profile</a> of
+the ODF holds a set of constrains that use Xpath syntax to define the
+usage of elements and attributes. The Xpath syntax uses a path notation,
+like those used in URLs, for addressing parts of an XML document. There
+are three types of constrains for the usage of the nodes:
+<code>mandatory</code>, <code>optional</code>, and
 <code>mandatory if parent element is present</code>.</p>
 <p>Using some examples, we explain the implementation of the three
 constraints within the XML profile file, which is necessary for
 validating the actual XML file that stores the dataset’s metadata
 component. For a complete human-readable view of the profile, skip to
-the section <a href="#overview">Overview</a> or take a look at the <a
-href="profile_view.csv">XML profile CSV file</a>. The XML file of the
-ODF metadata profile, you can find under <a
-href="profile.xml">profile.xml</a> in this directory.</p>
+the section <a href="#complete-profile-view">Complete Profile View</a>
+or take a look at the XML profile CSV file.</p>
 <p><br></p>
 <div id="mandatory-constraint" class="section level3">
 <h3>Mandatory Constraint</h3>

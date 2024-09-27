@@ -24,7 +24,7 @@ To work with data files in the Open Data Format the [R Package opendataformat](r
 [Stata package opendf](stata-package.html) are available at the moment. 
 A python package is in the making.
 
-Manuals for generating data files in ODF can be found on 
+You can download an example data file in the Open Data Format (<a href="/docs/files/example_dataset.zip" download>example_dataset.zip</a>). Manuals for generating data files in ODF can be found on 
 [GitHub](https://github.com/opendataformat/Specification/tree/main/Generating%20Open%20Data%20Format) for Stata, R and Python.
 
 <br>

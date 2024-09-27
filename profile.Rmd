@@ -6,7 +6,7 @@ output: html_document
 ------------------------------------------------------------------------
 
 -   [Metadata Profile](#the-metadata-profile-of-the-open-data-format)
--   [Explanation](#explanation)
+-   [ODF DDI Profiles](#odf-ddi-profile)
     -   [Mandatory Constraint](#mandatory-constraint)
     -   [Optional Constraint](#optional-constraint)
     -   [Mandatory if parent element is present Constraint](#mandatory-if-parent-element-is-present-constraint)
@@ -28,9 +28,8 @@ for validating a metadata file. Data producers can check upfront whether
 their data product will work with the technical solutions developed in
 this project. For example, if you create an XML metadata file in the
 ODF-specification yourself, you can validate it. For this purpose you can
-use the [XML profile](profile.xml) from this repository and upload it,
-together with your XML metadata file (e. g., from the
-[example](../example/metadata.xml) folder) to the website of the [CESSDA
+use the (<a href="/docs/files/profile.xml" download>XML profile</a>) from this repository and upload it,
+together with your XML metadata file (<a href="/docs/files/metadata.xml" download>metadata.xml</a>) to the website of the [CESSDA
 Metadata Validator](https://cmv.cessda.eu/#!validation).
 
 The metadata component of the Open Data Format follows the DDI-Codebook
@@ -59,9 +58,10 @@ marking them with the characters &lt;*modyfied text*&gt;.
 
 <br>
 
-## Explanation
+## ODF DDI Profiles
 
-The ODF profile holds a set of constrains that use Xpath
+The <a href="/docs/files/profile.xml" download>DDI XML profile</a> of the ODF 
+holds a set of constrains that use Xpath
 syntax to define the usage of elements and attributes. The Xpath syntax
 uses a path notation, like those used in URLs, for addressing parts of
 an XML document. There are three types of constrains for the usage of
@@ -72,10 +72,8 @@ Using some examples, we explain the implementation of the three
 constraints within the XML profile file, which is necessary for
 validating the actual XML file that stores the dataset’s metadata
 component. For a complete human-readable view of the profile, skip to
-the section [Overview](#overview) or take a look at the [XML profile CSV
-file](profile_view.csv). The XML file of the ODF metadata
-profile, you can find under [profile.xml](profile.xml) in this
-directory.
+the section [Complete Profile View](#complete-profile-view) or take a look at 
+the XML profile CSV file.
 
 <br>
 

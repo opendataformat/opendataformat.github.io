@@ -1,4 +1,5 @@
 name: "Open Data Format"
+output_dir: "docs"  # Specify the output folder here
 navbar:
   title: ""
   right: 
