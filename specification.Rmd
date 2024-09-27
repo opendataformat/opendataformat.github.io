@@ -77,9 +77,9 @@ profile. Since we provide a profile XML
 Metadata Validator to verify if your metadata is already interoperable
 with the metadata profile specified for the ODF. To test
 the validator tool from CESSDA you can download the metadata file from
-this repository (<a href="/files/metadata.xml" download>files/metadata.xml</a>) and
+this repository (<a href="/files/metadata.xml" download>metadata.xml</a>) and
 validate against the ODF profil
-(<a href="/files/profile.xml" download>/files/profile.xml</a>). 
+(<a href="/files/profile.xml" download>profile.xml</a>). 
 For further information on the metadata profile, see [Profile](profile.html).
 
 <br><br>
