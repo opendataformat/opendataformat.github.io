@@ -77,9 +77,9 @@ file](Profile/profile.xml), you can use the CESSDA
 Metadata Validator to verify if your metadata is already interoperable
 with the metadata profile specified for the ODF. To test
 the validator tool from CESSDA you can download the metadata file from
-this repository [metadata.xml](files/metadata.xml)) and
-validate against the ODF <a href="files/profile.xml">profile</a> profil
-([profile.xml](blob:https://github.com/c55be234-72f0-4596-b4b2-06a33a77a876)). For further information on the 
-metadata profile, see [Profile](profile.html).
+this repository [metadata.xml](https://raw.githubusercontent.com/opendataformat/opendataformat.github.io/refs/heads/main/docs/files/metadata.xml)) and
+validate against the ODF profil
+(<a href="/docs/files/profile.xml" download>Download Profile</a>). 
+For further information on the metadata profile, see [Profile](profile.html).
 
 <br><br>

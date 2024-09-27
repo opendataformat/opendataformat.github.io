@@ -11,7 +11,7 @@
 
 
 
-<title>profile.knit</title>
+<title> Open Data Format</title>
 
 <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -241,7 +241,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html"> Open Data Format - ODF</a>
+      <a class="navbar-brand" href="index.html">Open Data Format - ODF</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -283,7 +283,10 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore"><img src="images/odf%20icon%20long.png" alt="Icon" style="height:150px;"/></h1>
+<h1 class="title toc-ignore"><img src="images/odf%20icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/>
+<span
+style="font-size: 60px; color: #156082; font-weight: bold; position: relative; top: 10px;">Open
+Data Format</span></h1>
 
 </div>
 
@@ -345,9 +348,8 @@ class="uri">https://ddialliance.org/Specification/DDI-Codebook/2.5/</a>).
 Some text passages we have adapted or supplemented and made the changes
 notable by marking them with the characters &lt;<em>modyfied
 text</em>&gt;.</p>
-</div>
-<div id="explanation" class="section level1">
-<h1>Explanation</h1>
+<div id="explanation" class="section level2">
+<h2>Explanation</h2>
 <p>The ODF profile holds a set of constrains that use Xpath syntax to
 define the usage of elements and attributes. The Xpath syntax uses a
 path notation, like those used in URLs, for addressing parts of an XML
@@ -362,6 +364,7 @@ the section <a href="#overview">Overview</a> or take a look at the <a
 href="profile_view.csv">XML profile CSV file</a>. The XML file of the
 ODF metadata profile, you can find under <a
 href="profile.xml">profile.xml</a> in this directory.</p>
+</div>
 <div id="mandatory-constraint" class="section level2">
 <h2>Mandatory Constraint</h2>
 <p>The function of the <code>var</code> node is to hold multiple pieces
@@ -410,9 +413,8 @@ Profile.</p>
     &lt;/pr:Used&gt;  </code></pre>
 <p>Code 1: Respective XML Code for the example presented in Table 1.</p>
 <!-- -------------------- -->
-</div>
-<div id="optional-constraint" class="section level2">
-<h2>Optional Constraint</h2>
+<div id="optional-constraint" class="section level3">
+<h3>Optional Constraint</h3>
 <p>The metadata specification of the Open Data Format allows providing a
 lengthier description of a variable that goes beyond the variable label.
 Since an extended variable description may not always be necessary, the
@@ -458,8 +460,8 @@ Profile.</p>
 <!-- -------------------- -->
 </div>
 <div id="mandatory-if-parent-element-is-present-constraint"
-class="section level2">
-<h2>Mandatory if parent element is present Constraint</h2>
+class="section level3">
+<h3>Mandatory if parent element is present Constraint</h3>
 <p>The metadata specification of the Open Data Format supports
 multi-lingual labels and descriptions for several dataset elements like
 variables or values, which makes it necessary to declare the language of
@@ -514,8 +516,8 @@ constraint within the ODF Profile.</p>
 <!-- -------------------- -->
 </div>
 </div>
-<div id="complete-profile-view" class="section level1">
-<h1>Complete Profile View</h1>
+<div id="complete-profile-view" class="section level2">
+<h2>Complete Profile View</h2>
 <table>
 <colgroup>
 <col width="4%" />
@@ -853,6 +855,8 @@ class="math display">\[@URI\]</span></td>
 </tr>
 </tbody>
 </table>
+<p><br><br></p>
+</div>
 </div>
 
 <footer>
