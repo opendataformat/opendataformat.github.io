@@ -33,20 +33,10 @@ Learn more about the Open Data Format in R in `vignette("opendataformat")`.
 
 ## Installation
 
-At this point the R package can be installed from Zenodo.
+The R package can be installed from CRAN
 
 ``` r
-# Install the latest version of the opendataformat package from Zenodo:
-install.packages("https://zenodo.org/records/13683314/files/opendataformat_1.2.1.tar.gz",
-                 repos=NULL, method="libcurl")
-```
-
-Alternatively the development version can be installed from GitHub.
-
-``` r
-# Install development version from GitHub:
-# install.packages("devtools")
-devtools::install_git("https://github.com/opendataformat/r-package-opendataformat.git")
+install.packages("opendataformat")
 ```
 
 <br>
@@ -59,7 +49,7 @@ The opendataformat package consists of five main functions:
 
 - `docu_odf()` to explore the dataset information. You can set the whole dataset `df` or an selected variable `df$var` as input and you will get an HTML page, displayed either in the RStudio viewer or the Web Browser, with metadata on the respective data level. 
 
-- `setLanguage_odf()` changes the "active" language of a dataset. The metadata for this language is by default displayed with `docu_odf()`.
+- `setlanguage_odf()` changes the "active" language of a dataset. The metadata for this language is by default displayed with `docu_odf()`.
 
 - `write_odf()` to write the R Dataframe to an Open Data Format ZIP file. By specifying the dataframe input and providing the output directory path the function will generate a ZIP file containing the dataset as "data.csv" and "metadata.xml".
 
