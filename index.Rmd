@@ -20,9 +20,8 @@ file (CSV) and the metadata in an XML-file structured in the DDI Codebook
 metadata standard. For further information on the specification of the 
 Open Data Format you can read the [Specification](specification.html).
 
-To work with data files in the Open Data Format the [R Package opendataformat](r-package.html) and the 
-[Stata package opendf](stata-package.html) are available at the moment. 
-A python package is in the making.
+To work with data files in the Open Data Format the [R Package opendataformat](r-package.html), the 
+[Stata package opendf](stata-package.html), and the [Python package opendf](python-package.html) are available at the moment. 
 
 You can download an example data file in the Open Data Format (<a href="/files/example_dataset.zip" download>example_dataset.zip</a>). Manuals for generating data files in ODF can be found on 
 [GitHub](https://github.com/opendataformat/Specification/tree/main/Generating%20Open%20Data%20Format) for Stata, R and Python.

@@ -296,6 +296,9 @@ $(document).ready(function () {
   <a href="stata-package.html">Stata Package</a>
 </li>
 <li>
+  <a href="python-package.html">Python Package</a>
+</li>
+<li>
   <a href="mailto:thartl@diw.de">
     <span class="fa fa-envelope fa-lg"></span>
      
@@ -336,9 +339,9 @@ style="color: #156082; font-weight: bold; position: relative; top: 10px;">R-Pack
 <div id="r-package-opendataformat" class="section level2">
 <h2>R-Package opendataformat</h2>
 <p>The <code>opendataformat</code> package is specifically designed to
-facilitate the seamless utilization of the Open Data Format. It offers
-functionality to import data from the Open Data Format into an R data
-frame, as well as export data from an R data frame to the Open Data
+facilitate the seamless utilization of the Open Data Format in R. It
+offers functionality to import data from the Open Data Format into an R
+data frame, as well as export data from an R data frame to the Open Data
 Format. Additionally, you can easily access comprehensive information
 about the dataset and variables using either the RStudio Viewer or your
 web browser. This user-friendly approach ensures convenient exploration
@@ -359,15 +362,8 @@ the Open Data Format
 </div>
 <div id="installation" class="section level2">
 <h2>Installation</h2>
-<p>At this point the R package can be installed from Zenodo.</p>
-<pre class="r"><code># Install the latest version of the opendataformat package from Zenodo:
-install.packages(&quot;https://zenodo.org/records/13683314/files/opendataformat_1.2.1.tar.gz&quot;,
-                 repos=NULL, method=&quot;libcurl&quot;)</code></pre>
-<p>Alternatively the development version can be installed from
-GitHub.</p>
-<pre class="r"><code># Install development version from GitHub:
-# install.packages(&quot;devtools&quot;)
-devtools::install_git(&quot;https://github.com/opendataformat/r-package-opendataformat.git&quot;)</code></pre>
+<p>The R package can be installed from CRAN</p>
+<pre class="r"><code>install.packages(&quot;opendataformat&quot;)</code></pre>
 <p><br></p>
 </div>
 <div id="getting-started" class="section level2">
@@ -383,7 +379,7 @@ can set the whole dataset <code>df</code> or an selected variable
 <code>df$var</code> as input and you will get an HTML page, displayed
 either in the RStudio viewer or the Web Browser, with metadata on the
 respective data level.</p></li>
-<li><p><code>setLanguage_odf()</code> changes the “active” language of a
+<li><p><code>setlanguage_odf()</code> changes the “active” language of a
 dataset. The metadata for this language is by default displayed with
 <code>docu_odf()</code>.</p></li>
 <li><p><code>write_odf()</code> to write the R Dataframe to an Open Data
