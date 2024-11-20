@@ -5,6 +5,15 @@ output: html_document
 
 ------------------------------------------------------------------------
 
+-   [Overview](#python-package-opendataformat)
+-   [Installation](#installation)
+-   [Getting Started](#getting-started)
+-   [Multilingual Datasets](#multilingual-datasets)
+-   [Getting Help](#getting-help)
+
+------------------------------------------------------------------------
+
+
 <br>
 
 ## Python-Package opendataformat 
@@ -19,10 +28,9 @@ For more comprehensive insights into the Open Data Format specification, please 
 
 ## Installation
 
-You can download and install the opendataformat package directly from GitHub using the CMD command `pip install` in the Command Prompt.
+You can download and install the development version of the opendataformat package directly from GitHub using the CMD command `pip install` in the Command Prompt.
 
 ``` batch
-# You can install the development version from GitHub:
 pip install git+https://github.com/opendataformat/python-package-opendataformat.git
 ```
 
