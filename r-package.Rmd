@@ -1,5 +1,5 @@
 ---
-title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="color: #156082; font-weight: bold; position: relative; top: 10px;">R-Package</span>'
+title: '<img src="images/odf icon.png" alt="Icon" style="height:100px; vertical-align: middle;"/> <span style="color: #156082; font-weight: bold; position: relative; top: 10px;">R Package</span>'
 output: html_document
 ---
 
