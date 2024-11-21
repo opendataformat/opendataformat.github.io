@@ -51,6 +51,7 @@ The opendataformat package consists of five main functions:
 
 - `odf.write_odf()` to write the Pandas Dataframe to an Open Data Format ZIP file. By specifying the dataframe input and providing the output directory path the function will generate a ZIP file containing the dataset as "data.csv" and "metadata.xml".
 
+For more information visit the [python package documentation](https://opendataformat.github.io/python-package-opendataformat/).
 
 <br>
 
