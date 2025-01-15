@@ -28,7 +28,7 @@ For more comprehensive insights into the Open Data Format specification, please 
 
 ## Installation
 
-You can download and install the development version of the opendataformat package directly from GitHub using the CMD command `pip install` in the Command Prompt.
+You can download and install the development version of the `opendataformat` package directly from GitHub using the CMD command `pip install` in the Command Prompt.
 
 ``` batch
 pip install git+https://github.com/opendataformat/python-package-opendataformat.git
@@ -43,7 +43,7 @@ To use the opendataformat package you have to import the library in python.
 import opendataformat as odf
 ```
 
-The opendataformat package consists of five main functions:
+The `opendataformat` package consists of three main functions:
 
 - `odf.read_odf()` to read an Open Data Format file in Pandas. This function takes an input parameter "path", which is the path to the Open Data Format ZIP file.
 
