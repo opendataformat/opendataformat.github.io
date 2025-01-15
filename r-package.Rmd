@@ -43,7 +43,7 @@ install.packages("opendataformat")
 
 ## Getting Started
 
-The opendataformat package consists of six main functions:
+The `opendataformat` package consists of six main functions:
 
 - `read_odf()` to read an Open Data Format file in R. This function takes an input parameter, which is the path to the Open Data Format ZIP file, and points to an R object for further processing.
 
