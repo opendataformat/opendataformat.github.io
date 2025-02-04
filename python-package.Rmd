@@ -28,10 +28,10 @@ For more comprehensive insights into the Open Data Format specification, please 
 
 ## Installation
 
-You can download and install the development version of the `opendataformat` package directly from GitHub using the CMD command `pip install` in the Command Prompt.
+You can install the `opendataformat` package directly from PyPI using the CMD command `pip install` in the Command Prompt (or Anaconda Prompt).
 
 ``` batch
-pip install git+https://github.com/opendataformat/python-package-opendataformat.git
+pip install opendataformat
 ```
 
 <br>
