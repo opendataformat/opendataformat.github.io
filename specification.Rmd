@@ -5,6 +5,11 @@ output: html_document
 
 ------------------------------------------------------------------------
 
+-   [Specification of the Open Data Format](#specification-of-the-open-data-format)
+-   [Example Files](#example-files)
+-   [Profile](#profile)
+
+------------------------------------------------------------------------
 <br>
 
 ## Specification of the Open Data Format
@@ -15,19 +20,28 @@ data format that data producers can provide while data users can
 import the data format into several statistical software.
 
 The ODF consists of data and metadata organized in two
-separate files (see Figure 2). The data is stored in CSV format and the
-metadata is in XML. For data exchange, both files are packed into a ZIP
-file. The ZIP file corresponds to the dataset to be used for various
-statistics programs through import filters. Vice Versa, statistical
-software is to be capable of exporting the native format to the
-ODF.
+separate files. The data is stored in CSV format and the
+metadata is in XML. For data exchange, both files are packed together with an 
+ODF version file (.json) into a ZIP file (see graphic). 
+The file has the extension .odf.zip and corresponds to the dataset file 
+to be used for various statistics programs through import filters. 
+Vice Versa, statistical software are to be capable of exporting the 
+native format to the ODF.
 
 The DDI-Codebook 2.5 metadata schema is the basis for the specification
 of the metadata component in the ODF. Besides the
 DDI-Codebook 2.5 schema, the ODF is to be extendable with
 further existing metadata schemas.
 
-<img src="images/img01.png" alt="Specification of a data file in the Open Data Format" style="margin-bottom: 20px;"><p style="text-align: right;">Specification of a data file in the Open Data Format</p>
+<img src="images/odf_components.png" alt="Specification of a data file in the Open Data Format" style="margin-bottom: 20px;"><p style="text-align: right;">Specification of a data file in the Open Data Format</p>
+
+<br>
+
+## Example Files
+| Version   | File              |
+|:----|:---------------|
+| 1.1.0     | <a href="/files/example_dataset_v1_1_0.odf.zip" download>example_dataset_v1_1_0.odf.zip</a>     |
+| 1.0.0     | <a href="/files/example_dataset_v1_0_0.zip" download>example_dataset_v1_0_0.zip</a>     | 
 
 <br>
 
@@ -80,5 +94,6 @@ this repository (<a href="/files/metadata.xml" download>metadata.xml</a>) and
 validate against the ODF profil
 (<a href="/files/profile.xml" download>profile.xml</a>). 
 For further information on the metadata profile, see [Profile](profile.html).
+
 
 <br><br>

@@ -14,16 +14,18 @@ metadata enriched, and zip-compressed data format.
 The ODF meets the FAIR Guiding Principles for scientific data management 
 and stewardship.
 
-A data file in the Open Data Format has the ".zip"-extension. It is
+The current version of the Open Data Format is 1.1.0.
+A data file in the Open Data Format has the ".odf.zip"-extension. It is
 a zip-compressed folder containing the raw dataset in a comma-seperated 
-file (CSV) and the metadata in an XML-file structured in the DDI Codebook 
-metadata standard. For further information on the specification of the 
-Open Data Format you can read the [Specification](specification.html).
+file (CSV),  the metadata in an XML-file structured in the DDI Codebook 
+metadata standard and a version file (odf-version.json). For further information on the specification of the 
+Open Data Format you can read the [Specification](specification.html). 
+Previous versions of the Open Data Format hat the extension ".zip" and no version file.
 
 To work with data files in the Open Data Format the [R Package opendataformat](r-package.html), the 
 [Stata package opendf](stata-package.html), and the [Python package opendf](python-package.html) are available at the moment. 
 
-You can download an example data file in the Open Data Format (<a href="/files/example_dataset.zip" download>example_dataset.zip</a>). Manuals for generating data files in ODF can be found on 
+You can download an example data file in the Open Data Format (<a href="/files/example_dataset_v1_1_0.odf.zip" download>example_dataset_v1_1_0.odf.zip</a>). Manuals for generating data files in ODF can be found on 
 [GitHub](https://github.com/opendataformat/Specification/tree/main/Generating%20Open%20Data%20Format) for Stata, R and Python.
 
 <br>

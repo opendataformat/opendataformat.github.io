@@ -328,6 +328,13 @@ Data Format: Specification</span></h1>
 
 
 <hr />
+<ul>
+<li><a href="#specification-of-the-open-data-format">Specification of
+the Open Data Format</a></li>
+<li><a href="#example-files">Example Files</a></li>
+<li><a href="#profile">Profile</a></li>
+</ul>
+<hr />
 <p><br></p>
 <div id="specification-of-the-open-data-format" class="section level2">
 <h2>Specification of the Open Data Format</h2>
@@ -336,20 +343,50 @@ non-proprietary data format for data exchange and dissemination. In
 other words, it is the data format that data producers can provide while
 data users can import the data format into several statistical
 software.</p>
-<p>The ODF consists of data and metadata organized in two separate files
-(see Figure 2). The data is stored in CSV format and the metadata is in
-XML. For data exchange, both files are packed into a ZIP file. The ZIP
-file corresponds to the dataset to be used for various statistics
-programs through import filters. Vice Versa, statistical software is to
-be capable of exporting the native format to the ODF.</p>
+<p>The ODF consists of data and metadata organized in two separate
+files. The data is stored in CSV format and the metadata is in XML. For
+data exchange, both files are packed together with an ODF version file
+(.json) into a ZIP file (see graphic). The file has the extension
+.odf.zip and corresponds to the dataset file to be used for various
+statistics programs through import filters. Vice Versa, statistical
+software are to be capable of exporting the native format to the
+ODF.</p>
 <p>The DDI-Codebook 2.5 metadata schema is the basis for the
 specification of the metadata component in the ODF. Besides the
 DDI-Codebook 2.5 schema, the ODF is to be extendable with further
 existing metadata schemas.</p>
-<img src="images/img01.png" alt="Specification of a data file in the Open Data Format" style="margin-bottom: 20px;">
+<img src="images/odf_components.png" alt="Specification of a data file in the Open Data Format" style="margin-bottom: 20px;">
 <p style="text-align: right;">
 Specification of a data file in the Open Data Format
 </p>
+<p><br></p>
+</div>
+<div id="example-files" class="section level2">
+<h2>Example Files</h2>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Version</th>
+<th align="left">File</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1.1.0</td>
+<td
+align="left"><a href="/files/example_dataset_v1_1_0.odf.zip" download>example_dataset_v1_1_0.odf.zip</a></td>
+</tr>
+<tr class="even">
+<td align="left">1.0.0</td>
+<td
+align="left"><a href="/files/example_dataset_v1_0_0.zip" download>example_dataset_v1_0_0.zip</a></td>
+</tr>
+</tbody>
+</table>
 <p><br></p>
 </div>
 <div id="profile" class="section level2">
