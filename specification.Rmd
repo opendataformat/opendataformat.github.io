@@ -40,8 +40,8 @@ further existing metadata schemas.
 ## Example Files
 | Version   | File              |
 |:----|:---------------|
-| 1.1.0     | <a href="/files/example_dataset_v1_1_0.odf.zip" download>example_dataset_v1_1_0.odf.zip</a>     |
-| 1.0.0     | <a href="/files/example_dataset_v1_0_0.zip" download>example_dataset_v1_0_0.zip</a>     | 
+| 1.1.0     | <a href="/files/example_dataset_v1_1_0.odf.zip" download>example_dataset_v1_1_0.odf.zip</a>  <br>  <a href="/files/example_dataset.odf.zip" download>example_dataset.odf.zip</a>  |
+| 1.0.0     | <a href="/files/example_dataset_v1_0_0.zip" download>example_dataset_v1_0_0.zip</a>    | 
 
 <br>
 
