@@ -5,7 +5,7 @@
 Author: Xiaoyao Han, Tom Hartl, Claudia Saalbach - DIW Berlin
 Created: 2022-03-11
 Version: v1.0.0
-Last modified 2024-07-29 Xiaoyao Han
+Last modified 2026.11.02 Xiaoyao Han
 Licence: This document is issued under a CC BY licence (https://creativecommons.org/licenses/by/4.0/)
 -->
 
@@ -80,7 +80,7 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 		</r:Description>
 	</pr:Used>
 	
-	<pr:Used xpath="/codeBook/studyDscr/citation/titlStmt/titl/@xml:lang" isRequired="false">
+	<pr:Used xpath="/codeBook/stdyDscr/citation/titlStmt/titl/@xml:lang" isRequired="false">
 		<r:Description>
 			<r:Content>Required: Optional </r:Content>
 			<r:Content>ElementType: Attribute element</r:Content>					
@@ -96,7 +96,7 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 		</r:Description>
 	</pr:Used>
 	
-	<pr:Used xpath="/codeBook/studyDscr/fileTxt/fileCitation/titlStmt/parTitl/@xml:lang" isRequired="false">
+	<pr:Used xpath="/codeBook/stdyDscr/citation/titlStmt/parTitl/@xml:lang" isRequired="false">
 		<r:Description>
 			<r:Content>Required: Optional </r:Content>
 			<r:Content>ElementType: Attribute element</r:Content>					
@@ -158,18 +158,13 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 
 	<pr:Used xpath="/codeBook/fileDscr/fileTxt/fileCitation/titlStmt/titl/@xml:lang" isRequired="false">
 		<r:Description>
-			<r:Content>Required: Mandatory if ‚titl‘ element is present </r:Content>
+			<r:Content>Required: Optional</r:Content>
 			<r:Content>ElementType: Attribute element</r:Content>					
-			<r:Content>Usage: Attribute to specify the language of the dataset label. Use ISO-639-1-Code for language subtags, e.g. en for English.</r:Content>
+			<r:Content>Usage: Optional language tag for the dataset label. When omitted, the label is in the default or unspecified language. When present, use an ISO 639-1 language code, e.g. en for English.</r:Content>
 		</r:Description>
-		<pr:Instructions>
-			<r:Content>
-				<![CDATA[<Constraints><MandatoryNodeIfParentPresentConstraint/></Constraints>]]>
-			</r:Content>
-		</pr:Instructions>
 	</pr:Used>
 	
-	<pr:Used xpath="/codeBook/fileDscr/fileTxt/fileCitation/titlStmt/partitl/" isRequired="false">
+	<pr:Used xpath="/codeBook/fileDscr/fileTxt/fileCitation/titlStmt/parTitl" isRequired="false">
 		<r:Description>
 			<r:Content>Required: Optional</r:Content>
 			<r:Content>ElementType: Content element</r:Content>				
@@ -177,17 +172,12 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 		</r:Description>
 	</pr:Used>
 
-	<pr:Used xpath="/codeBook/fileDscr/fileTxt/fileCitation/titlStmt/partitl/@xml:lang" isRequired="false">
+	<pr:Used xpath="/codeBook/fileDscr/fileTxt/fileCitation/titlStmt/parTitl/@xml:lang" isRequired="false">
 		<r:Description>
-			<r:Content>Required: Mandatory if ‚titl‘ element is present </r:Content>
+			<r:Content>Required: Optional</r:Content>
 			<r:Content>ElementType: Attribute element</r:Content>					
-			<r:Content>Usage: Attribute to specify the language of the dataset label. Use ISO-639-1-Code for language subtags, e.g. en for English.</r:Content>
+			<r:Content>Usage: Optional language tag for the parallel dataset label. When omitted, the label is in the default or unspecified language. When present, use an ISO 639-1 language code, e.g. en for English.</r:Content>
 		</r:Description>
-		<pr:Instructions>
-			<r:Content>
-				<![CDATA[<Constraints><MandatoryNodeIfParentPresentConstraint/></Constraints>]]>
-			</r:Content>
-		</pr:Instructions>
 	</pr:Used>
 
 	<pr:Used xpath="/codeBook/fileDscr/fileTxt/fileCont" isRequired="false">
@@ -200,18 +190,13 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 
 	<pr:Used xpath="/codeBook/fileDscr/fileTxt/fileCont/@xml:lang" isRequired="false">
 		<r:Description>
-			<r:Content>Required: Mandatory if 'fileCont' element is present</r:Content>
+			<r:Content>Required: Optional</r:Content>
 			<r:Content>ElementType: Attribute element</r:Content>				
-			<r:Content>Usage: Attribute to specify the language of the dataset description. Use ISO-639-1-Code for language subtags, e.g. en for English.</r:Content>
+			<r:Content>Usage: Optional language tag for the dataset description. When omitted, the description is in the default or unspecified language. When present, use an ISO 639-1 language code, e.g. en for English.</r:Content>
 		</r:Description>
-		<pr:Instructions>
-			<r:Content>
-				<![CDATA[<Constraints><MandatoryNodeIfParentPresentConstraint/></Constraints>]]>
-			</r:Content>
-		</pr:Instructions>		
 	</pr:Used>
 
-	<pr:Used xpath="/codeBook/fileDscr/fileTxt/notes" isRequired="false">
+	<pr:Used xpath="/codeBook/fileDscr/notes" isRequired="false">
 		<r:Description>
 			<r:Content>Required: Optional</r:Content>
 			<r:Content>ElementType: Content element</r:Content>					
@@ -219,7 +204,7 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 		</r:Description>
 	</pr:Used>	
 
-	<pr:Used xpath="/codeBook/fileDscr/fileTxt/notes/ExtLink" isRequired="false">
+	<pr:Used xpath="/codeBook/fileDscr/notes/ExtLink" isRequired="false">
 		<r:Description>
 			<r:Content>Required: Optional</r:Content>
 			<r:Content>ElementType: Content element</r:Content>					
@@ -227,7 +212,7 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 		</r:Description>
 	</pr:Used>	
 
-	<pr:Used xpath="/codeBook/fileDscr/fileTxt/notes/ExtLink/@URI" isRequired="false">
+	<pr:Used xpath="/codeBook/fileDscr/notes/ExtLink/@URI" isRequired="false">
 		<r:Description>
 			<r:Content>Required: Mandatory if 'ExtLink' element is present.</r:Content>
 			<r:Content>ElementType: Attribute element</r:Content>					
@@ -290,15 +275,10 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 
 	<pr:Used xpath="/codeBook/dataDscr/var/labl/@xml:lang" isRequired="false">
 		<r:Description>
-			<r:Content>Required: Mandatory if 'labl' element is present.</r:Content>
+			<r:Content>Required: Optional</r:Content>
 			<r:Content>ElementType: Attribute element</r:Content>
-			<r:Content>Usage: Attribute to specify the language of the variable label. Use ISO-639-1-Code for language subtags, e.g. en for English.</r:Content>
+			<r:Content>Usage: Optional language tag for the variable label. When omitted, the label is in the default or unspecified language. When present, use an ISO 639-1 language code, e.g. en for English.</r:Content>
 		</r:Description>
-		<pr:Instructions>
-			<r:Content>
-				<![CDATA[<Constraints><MandatoryNodeIfParentPresentConstraint/></Constraints>]]>
-			</r:Content>
-		</pr:Instructions>			
 	</pr:Used>	
 
 	<pr:Used xpath="/codeBook/dataDscr/var/txt" isRequired="false">
@@ -311,15 +291,10 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 
 	<pr:Used xpath="/codeBook/dataDscr/var/txt/@xml:lang" isRequired="false">
 		<r:Description>
-			<r:Content>Required: Mandatory if 'txt' element is present.</r:Content>
+			<r:Content>Required: Optional</r:Content>
 			<r:Content>ElementType: Attribute element</r:Content>
-			<r:Content>Usage: Attribute to specify the language of the variable description>. Use ISO-639-1-Code for language subtags, e.g. en for English.</r:Content>			
+			<r:Content>Usage: Optional language tag for the variable description. When omitted, the description is in the default or unspecified language. When present, use an ISO 639-1 language code, e.g. en for English.</r:Content>			
 		</r:Description>
-		<pr:Instructions>
-			<r:Content>
-				<![CDATA[<Constraints><MandatoryNodeIfParentPresentConstraint/></Constraints>]]>
-			</r:Content>
-		</pr:Instructions>	
 	</pr:Used>		
 
 	<pr:Used xpath="/codeBook/dataDscr/var/catgry" isRequired="false">
@@ -353,15 +328,10 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 
 	<pr:Used xpath="/codeBook/dataDscr/var/catgry/labl/@xml:lang" isRequired="false">
 		<r:Description>
-			<r:Content>Required: Mandatory if 'labl' element is present.</r:Content>
+			<r:Content>Required: Optional</r:Content>
 			<r:Content>ElementType: Attribute element</r:Content>
-			<r:Content>Usage: Attribute to specify the language of the value label. Use ISO-639-1-Code for language subtags, e.g. en for English.</r:Content>			
+			<r:Content>Usage: Optional language tag for the value label. When omitted, the label is in the default or unspecified language. When present, use an ISO 639-1 language code, e.g. en for English.</r:Content>			
 		</r:Description>
-		<pr:Instructions>
-			<r:Content>
-				<![CDATA[<Constraints><MandatoryNodeIfParentPresentConstraint/></Constraints>]]>
-			</r:Content>
-		</pr:Instructions>			
 	</pr:Used>
 	
 	<pr:Used xpath="/codeBook/dataDscr/var/varFormat" isRequired="false">
@@ -372,17 +342,19 @@ Licence: This document is issued under a CC BY licence (https://creativecommons.
 		</r:Description>
 	</pr:Used>		
 
-	<pr:Used xpath="/codeBook/dataDscr/var/varFormat/@type" isRequired="false">
+	<pr:Used xpath="/codeBook/dataDscr/var/varFormat/@type" defaultValue="numeric" isRequired="false">
 		<r:Description>
 			<r:Content>Required: Mandatory if 'varFormat' element is present</r:Content>
 			<r:Content>ElementType: Attribute element</r:Content>
-			<r:Content>Usage: Attributes for this element include: "type," which indicates if the variable is character or numeric;</r:Content>
+			<r:Content>Usage: Indicates whether the variable is character or numeric.</r:Content>
+			<r:Content>AllowedValue: character | numeric</r:Content>
+			<r:Content>DefaultValue: numeric</r:Content>
 		</r:Description>
 		<pr:Instructions>
 			<r:Content>
 				<![CDATA[<Constraints><MandatoryNodeIfParentPresentConstraint/></Constraints>]]>
 			</r:Content>
-		</pr:Instructions>			
+		</pr:Instructions>
 	</pr:Used>
 	
 	<pr:Used xpath="/codeBook/dataDscr/var/notes" isRequired="false">

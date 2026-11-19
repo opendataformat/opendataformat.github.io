@@ -37,34 +37,17 @@
 <!-- header.html -->
 <link rel="icon" href="images/odf_icon_transparent.ico" type="image/x-icon">
 
-<style>
-    .navbar {
-        display: flex; /* Use flexbox for the navbar */
-        align-items: center; /* Center items vertically */
-        padding: 10px; /* Add padding for vertical space */
-    }
-
-    .navbar-brand {
-        display: flex; /* Use flexbox for the brand */
-        align-items: center; /* Center items vertically */
-    }
-
-    .navbar-brand img {
-        height: 150px;  /* Set the height of the icon */
-        max-height: 150px; /* Ensure it doesn't exceed the navbar height */
-        width: auto; /* Maintain aspect ratio */
-        margin-right: 10px;  /* Space between icon and text */
-    }
-</style>
-
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const navbarBrand = document.querySelector('.navbar-brand');
-        const icon = document.createElement('img');
-        icon.src = 'images/odf_icon_long_white2_transparent.ico';  // Adjust this path if necessary
-        icon.alt = 'ODF Icon';  // Alt text for accessibility
-        navbarBrand.prepend(icon);
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  const navbarBrand = document.querySelector(".navbar-brand");
+  if (!navbarBrand || navbarBrand.querySelector(".odf-navbar-logo")) return;
+
+  const icon = document.createElement("img");
+  icon.src = "images/odf_icon_long_white2_higher_transparent.png";
+  icon.alt = "Open Data Format";
+  icon.className = "odf-navbar-logo";
+  navbarBrand.prepend(icon);
+});
 </script>
 
 <style type="text/css">
@@ -305,7 +288,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="http://github.com/opendataformat/">
+  <a href="https://github.com/opendataformat/">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -345,8 +328,7 @@ data users can import the data format into several statistical
 software.</p>
 <p>The ODF consists of data and metadata organized in two separate
 files. The data is stored in CSV format and the metadata is in XML. For
-data exchange, both files are packed together with an ODF version file
-(.json) into a ZIP file (see graphic). The file has the extension
+data exchange, both files are packed together into a ZIP file (see graphic). The file has the extension
 .odf.zip and corresponds to the dataset file to be used for various
 statistics programs through import filters. Vice Versa, statistical
 software are to be capable of exporting the native format to the
@@ -443,8 +425,7 @@ Format.</p>
 <td align="left">The attribute “name” usually contains the so-called
 “short label” for the variable, limited to eight characters in many
 statistical analysis systems such as SAS or SPSS.</td>
-<td align="left">//codeBook/dataDscr/var<span
-class="math display">\[@name\]</span></td>
+<td align="left">//codeBook/dataDscr/var<code>[@name]</code></td>
 <td align="left">mandatory if ‚var‘ element is present</td>
 </tr>
 <tr class="even">
@@ -461,12 +442,11 @@ itself imposes no restrictions on the number of characters allowed.</td>
 <tr class="odd">
 <td align="left">22</td>
 <td align="left">language tag</td>
-<td align="left">Attribute to specify the language of the
-<variable label>. &lt;Use ISO-639-1-Code for language subtags, e.g. en
-for English.&gt;</td>
-<td align="left">//codeBook/dataDscr/var/labl<span
-class="math display">\[@xml:lang\]</span></td>
-<td align="left">mandatory if ‚labl‘ element is present</td>
+<td align="left">Optional language tag for the variable label. When omitted,
+the label is in the default or unspecified language. When present, use an ISO
+639-1 language code, e.g. en for English.</td>
+<td align="left">//codeBook/dataDscr/var/labl<code>[@xml:lang]</code></td>
+<td align="left">optional</td>
 </tr>
 </tbody>
 </table>
@@ -493,7 +473,7 @@ href="profile.html">Profile</a>.</p>
 </div>
 
 <footer>
-  <p>Copyright &copy; 2024 Open Data Format. All rights reserved.</p>
+  <p>Copyright &copy; 2026 Open Data Format. All rights reserved.</p>
 </footer>
 
 

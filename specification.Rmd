@@ -21,8 +21,7 @@ import the data format into several statistical software.
 
 The ODF consists of data and metadata organized in two
 separate files. The data is stored in CSV format and the
-metadata is in XML. For data exchange, both files are packed together with an 
-ODF version file (.json) into a ZIP file (see graphic). 
+metadata is in XML. For data exchange, both files are packed together into a ZIP file (see graphic). 
 The file has the extension .odf.zip and corresponds to the dataset file 
 to be used for various statistics programs through import filters. 
 Vice Versa, statistical software are to be capable of exporting the 
@@ -72,9 +71,9 @@ DDI-Codebook 2.5 profile specified for the Open Data Format.
 
 |     | element.label  | element.description                                                                                                                                                                                                                                                                                                                       | xml file                             | xml\_classification                    |
 |:----|:---------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------|:---------------------------------------|
-| 20  | variable name  | The attribute “name” usually contains the so-called “short label” for the variable, limited to eight characters in many statistical analysis systems such as SAS or SPSS.                                                                                                                                                                 | //codeBook/dataDscr/var\[@name\]          | mandatory if ‚var‘ element is present  |
+| 20  | variable name  | The attribute “name” usually contains the so-called “short label” for the variable, limited to eight characters in many statistical analysis systems such as SAS or SPSS.                                                                                                                                                                 | //codeBook/dataDscr/var<code>[@name]</code>          | mandatory if ‚var‘ element is present  |
 | 21  | variable label | A short description of the variable. In the variable label, the length of this phrase may depend on the statistical analysis system used (e.g., some versions of SAS permit 40-character labels, while some versions of SPSS permit 120 characters), although the DDI itself imposes no restrictions on the number of characters allowed. | //codeBook/dataDscr/var/labl              | optional                               |
-| 22  | language tag   | Attribute to specify the language of the <variable label>. &lt;Use ISO-639-1-Code for language subtags, e.g. en for English.&gt;                                                                                                                                                                                                          | //codeBook/dataDscr/var/labl\[@xml:lang\] | mandatory if ‚labl‘ element is present |
+| 22  | language tag   | Optional language tag for the variable label. When omitted, the label is in the default or unspecified language. When present, use an ISO 639-1 language code, e.g. en for English.                                                                                                                                                                                                          | //codeBook/dataDscr/var/labl<code>[@xml:lang]</code> | optional |
 
 Table 1: Preview of the Open Data Format metadata profile based
 on the DDI-Codebook 2.5 schema

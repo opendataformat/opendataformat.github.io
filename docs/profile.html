@@ -37,34 +37,17 @@
 <!-- header.html -->
 <link rel="icon" href="images/odf_icon_transparent.ico" type="image/x-icon">
 
-<style>
-    .navbar {
-        display: flex; /* Use flexbox for the navbar */
-        align-items: center; /* Center items vertically */
-        padding: 10px; /* Add padding for vertical space */
-    }
-
-    .navbar-brand {
-        display: flex; /* Use flexbox for the brand */
-        align-items: center; /* Center items vertically */
-    }
-
-    .navbar-brand img {
-        height: 150px;  /* Set the height of the icon */
-        max-height: 150px; /* Ensure it doesn't exceed the navbar height */
-        width: auto; /* Maintain aspect ratio */
-        margin-right: 10px;  /* Space between icon and text */
-    }
-</style>
-
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const navbarBrand = document.querySelector('.navbar-brand');
-        const icon = document.createElement('img');
-        icon.src = 'images/odf_icon_long_white2_transparent.ico';  // Adjust this path if necessary
-        icon.alt = 'ODF Icon';  // Alt text for accessibility
-        navbarBrand.prepend(icon);
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  const navbarBrand = document.querySelector(".navbar-brand");
+  if (!navbarBrand || navbarBrand.querySelector(".odf-navbar-logo")) return;
+
+  const icon = document.createElement("img");
+  icon.src = "images/odf_icon_long_white2_higher_transparent.png";
+  icon.alt = "Open Data Format";
+  icon.className = "odf-navbar-logo";
+  navbarBrand.prepend(icon);
+});
 </script>
 
 <style type="text/css">
@@ -305,7 +288,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="http://github.com/opendataformat/">
+  <a href="https://github.com/opendataformat/">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -505,12 +488,13 @@ Profile.</p>
 <div id="mandatory-if-parent-element-is-present---constraint"
 class="section level3">
 <h3>Mandatory if Parent Element is Present - Constraint</h3>
-<p>The metadata specification of the Open Data Format supports
-multi-lingual labels and descriptions for several dataset elements like
-variables or values, which makes it necessary to declare the language of
-the text element using the attribute <code>@xml:lang</code>. For
-example, if a variable description exists (even if it is optional), the
-declaration of the language is mandatory.</p>
+<p>This constraint applies when the DDI schema requires an attribute after
+its parent element is used. For example, when a <code>varFormat</code> element is
+present, its <code>@type</code> attribute is mandatory. DDI permits
+<code>character</code> or <code>numeric</code> for this attribute, with
+<code>numeric</code> as the default. Language attributes are different:
+<code>@xml:lang</code> is optional for labels and descriptions; an
+untagged value represents the default or unspecified language.</p>
 <table>
 <colgroup>
 <col width="2%" />
@@ -531,23 +515,23 @@ declaration of the language is mandatory.</p>
 <tbody>
 <tr class="odd">
 <td align="left">24</td>
-<td align="left">language tag</td>
-<td align="left">Attribute to specify the language of the
-<variable description>. &lt;Use ISO-639-1-Code for language subtags,
-e.g. en for English.&gt;</td>
-<td align="left">//codeBook/dataDscr/var/txt<span
-class="math display">\[@xml:lang\]</span></td>
-<td align="left">mandatory if ‘txt’ element is present</td>
+<td align="left">variable type</td>
+<td align="left">Required DDI attribute that indicates whether the variable is
+<code>character</code> or <code>numeric</code>; the default is <code>numeric</code>.</td>
+<td align="left">//codeBook/dataDscr/var/varFormat<code>[@type]</code></td>
+<td align="left">mandatory if <code>varFormat</code> element is present</td>
 </tr>
 </tbody>
 </table>
-<p>Table 3: Example for an “mandotory if parent element is present”
+<p>Table 3: Example for a “mandatory if parent element is present”
 constraint within the ODF Profile.</p>
-<pre class="xml"><code>    &lt;pr:Used xpath=&quot;/codeBook/dataDscr/var/txt/@xml:lang&quot; isRequired=&quot;false&quot;&gt;
+<pre class="xml"><code>    &lt;pr:Used xpath=&quot;/codeBook/dataDscr/var/varFormat/@type&quot; defaultValue=&quot;numeric&quot; isRequired=&quot;false&quot;&gt;
         &lt;r:Description&gt;
-            &lt;r:Content&gt;Required: Mandatory if &#39;txt&#39; element is present.&lt;/r:Content&gt;
+            &lt;r:Content&gt;Required: Mandatory if &#39;varFormat&#39; element is present.&lt;/r:Content&gt;
             &lt;r:Content&gt;ElementType: Attribute element&lt;/r:Content&gt;
-            &lt;r:Content&gt;Usage: Attribute to specify the language of the variable description&gt;. Use ISO-639-1-Code for language subtags, e.g. en for English.&lt;/r:Content&gt;         
+            &lt;r:Content&gt;Usage: Indicates whether the variable is character or numeric.&lt;/r:Content&gt;
+            &lt;r:Content&gt;AllowedValue: character | numeric&lt;/r:Content&gt;
+            &lt;r:Content&gt;DefaultValue: numeric&lt;/r:Content&gt;         
         &lt;/r:Description&gt;
         &lt;pr:Instructions&gt;
             &lt;r:Content&gt;
@@ -589,29 +573,25 @@ constraint within the ODF Profile.</p>
 <td align="left">The top-level element, codeBook, also includes a
 version attribute to specify the version number of the DDI
 specification.</td>
-<td align="left">//codeBook<span
-class="math display">\[@version\]</span></td>
+<td align="left">//codeBook<code>[@version]</code></td>
 <td align="left">mandatory</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">//codeBook<span
-class="math display">\[@xmlns\]</span></td>
+<td align="left">//codeBook<code>[@xmlns]</code></td>
 <td align="left">mandatory</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">//codeBook<span
-class="math display">\[@xmlns:xsi\]</span></td>
+<td align="left">//codeBook<code>[@xmlns:xsi]</code></td>
 <td align="left">mandatory</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">//codeBook<span
-class="math display">\[@xsi:schemaLocation\]</span></td>
+<td align="left">//codeBook<code>[@xsi:schemaLocation]</code></td>
 <td align="left">mandatory</td>
 </tr>
 <tr class="even">
@@ -644,8 +624,7 @@ compilation</td>
 <td align="left">Attribute to specify the language of the &lt;study
 tile. &lt;Use ISO-639-1-Code for language subtags, e.g. en for
 English.&gt;</td>
-<td align="left">//codeBook/stdyDscr/citation/titlStmt/titl<span
-class="math display">\[@xml:lang\]</span></td>
+<td align="left">//codeBook/stdyDscr/citation/titlStmt/titl<code>[@xml:lang]</code></td>
 <td align="left">optional</td>
 </tr>
 <tr class="odd">
@@ -659,8 +638,7 @@ class="math display">\[@xml:lang\]</span></td>
 <td align="left">Attribute to specify the language of the study title.
 &lt;Use ISO-639-1-Code for language subtags, e.g. en for
 English.&gt;</td>
-<td align="left">//codeBook/stdyDscr/citation/titlStmt/parTitl<span
-class="math display">\[@xml:lang\]</span></td>
+<td align="left">//codeBook/stdyDscr/citation/titlStmt/parTitl<code>[@xml:lang]</code></td>
 <td align="left">optional</td>
 </tr>
 <tr class="odd">
@@ -711,13 +689,12 @@ align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt/titl</td>
 </tr>
 <tr class="odd">
 <td align="left">language tag</td>
-<td align="left">Attribute to specify the language of the
-<dataset label>. &lt;Use ISO-639-1-Code for language subtags, e.g. en
-for English.&gt;</td>
+<td align="left">Optional language tag for the dataset label. When omitted,
+the label is in the default or unspecified language. When present, use an ISO
+639-1 language code, e.g. en for English.</td>
 <td
-align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt/titl<span
-class="math display">\[@xml:lang\]</span></td>
-<td align="left">mandatory if ‚titl‘ element is present</td>
+align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt/titl<code>[@xml:lang]</code></td>
+<td align="left">optional</td>
 </tr>
 <tr class="even">
 <td align="left">parallel dataset label</td>
@@ -728,13 +705,12 @@ align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt/parTitl</td>
 </tr>
 <tr class="odd">
 <td align="left">language tag</td>
-<td align="left">Attribute to specify the language of the
-<dataset label>. &lt;Use ISO-639-1-Code for language subtags, e.g. en
-for English.&gt;</td>
+<td align="left">Optional language tag for the parallel dataset label. When
+omitted, the label is in the default or unspecified language. When present, use
+an ISO 639-1 language code, e.g. en for English.</td>
 <td
-align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt/parTitl<span
-class="math display">\[@xml:lang\]</span></td>
-<td align="left">mandatory if ‚parTitl‘ element is present</td>
+align="left">//codeBook/fileDscr/fileTxt/fileCitation/titlStmt/parTitl<code>[@xml:lang]</code></td>
+<td align="left">optional</td>
 </tr>
 <tr class="even">
 <td align="left">dataset description</td>
@@ -747,18 +723,17 @@ questions the PIs attempted to answer when they created the file.</td>
 </tr>
 <tr class="odd">
 <td align="left">language tag</td>
-<td align="left">Attribute to specify the language of the
-<dataset description>. &lt;Use ISO-639-1-Code for language subtags,
-e.g. en for English.&gt;</td>
-<td align="left">//codeBook/fileDscr/fileTxt/fileCont<span
-class="math display">\[@xml:lang\]</span></td>
-<td align="left">mandatory if ‘fileCont’ element is present</td>
+<td align="left">Optional language tag for the dataset description. When
+omitted, the description is in the default or unspecified language. When
+present, use an ISO 639-1 language code, e.g. en for English.</td>
+<td align="left">//codeBook/fileDscr/fileTxt/fileCont<code>[@xml:lang]</code></td>
+<td align="left">optional</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="left">For clarifying information/annotation regarding the
 <dataset>.</td>
-<td align="left">//codeBook/fileDscr/fileTxt/notes</td>
+<td align="left">//codeBook/fileDscr/notes</td>
 <td align="left">optional</td>
 </tr>
 <tr class="odd">
@@ -766,15 +741,14 @@ class="math display">\[@xml:lang\]</span></td>
 <td align="left">This element permits encoders to provide links from any
 arbitrary element containing ExtLink as a subelement to electronic
 resources outside the codebook.</td>
-<td align="left">//codeBook/fileDscr/fileTxt/notes/ExtLink</td>
+<td align="left">//codeBook/fileDscr/notes/ExtLink</td>
 <td align="left">optional</td>
 </tr>
 <tr class="even">
 <td align="left">dataset url</td>
 <td align="left">Attribute to provide an URL for more detailed
 information on the dataset.</td>
-<td align="left">//codeBook/fileDscr/fileTxt/notes/ExtLink<span
-class="math display">\[@URI\]</span></td>
+<td align="left">//codeBook/fileDscr/notes/ExtLink<code>[@URI]</code></td>
 <td align="left">mandatory if ‘ExtLink’ element is present</td>
 </tr>
 <tr class="odd">
@@ -795,8 +769,7 @@ variable in a social science data file.</td>
 <td align="left">The attribute “name” usually contains the so-called
 “short label” for the variable, limited to eight characters in many
 statistical analysis systems such as SAS or SPSS.</td>
-<td align="left">//codeBook/dataDscr/var<span
-class="math display">\[@name\]</span></td>
+<td align="left">//codeBook/dataDscr/var<code>[@name]</code></td>
 <td align="left">mandatory if ‚var‘ element is present</td>
 </tr>
 <tr class="even">
@@ -811,12 +784,11 @@ itself imposes no restrictions on the number of characters allowed.</td>
 </tr>
 <tr class="odd">
 <td align="left">language tag</td>
-<td align="left">Attribute to specify the language of the
-<variable label>. &lt;Use ISO-639-1-Code for language subtags, e.g. en
-for English.&gt;</td>
-<td align="left">//codeBook/dataDscr/var/labl<span
-class="math display">\[@xml:lang\]</span></td>
-<td align="left">mandatory if ‚labl‘ element is present</td>
+<td align="left">Optional language tag for the variable label. When omitted,
+the label is in the default or unspecified language. When present, use an ISO
+639-1 language code, e.g. en for English.</td>
+<td align="left">//codeBook/dataDscr/var/labl<code>[@xml:lang]</code></td>
+<td align="left">optional</td>
 </tr>
 <tr class="even">
 <td align="left">variable description</td>
@@ -826,12 +798,11 @@ class="math display">\[@xml:lang\]</span></td>
 </tr>
 <tr class="odd">
 <td align="left">language tag</td>
-<td align="left">Attribute to specify the language of the
-<variable description>. &lt;Use ISO-639-1-Code for language subtags,
-e.g. en for English.&gt;</td>
-<td align="left">//codeBook/dataDscr/var/txt<span
-class="math display">\[@xml:lang\]</span></td>
-<td align="left">mandatory if ‘txt’ element is present</td>
+<td align="left">Optional language tag for the variable description. When
+omitted, the description is in the default or unspecified language. When
+present, use an ISO 639-1 language code, e.g. en for English.</td>
+<td align="left">//codeBook/dataDscr/var/txt<code>[@xml:lang]</code></td>
+<td align="left">optional</td>
 </tr>
 <tr class="even">
 <td align="left">category</td>
@@ -853,12 +824,11 @@ class="math display">\[@xml:lang\]</span></td>
 </tr>
 <tr class="odd">
 <td align="left">language tag</td>
-<td align="left">Attribute to specify the language of the
-<category labels>. &lt;Use ISO-639-1-Code for language subtags, e.g. en
-for English.&gt;</td>
-<td align="left">//codeBook/dataDscr/var/catgry/labl<span
-class="math display">\[@xml:lang\]</span></td>
-<td align="left">mandatory if ‘labl’ element is present</td>
+<td align="left">Optional language tag for the category label. When omitted,
+the label is in the default or unspecified language. When present, use an ISO
+639-1 language code, e.g. en for English.</td>
+<td align="left">//codeBook/dataDscr/var/catgry/labl<code>[@xml:lang]</code></td>
+<td align="left">optional</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -868,11 +838,10 @@ class="math display">\[@xml:lang\]</span></td>
 </tr>
 <tr class="odd">
 <td align="left">variable type</td>
-<td align="left">Attributes for this element include: “type,” which
-indicates if the variable is character or numeric;</td>
-<td align="left">//codeBook/dataDscr/var/varFormat<span
-class="math display">\[@type\]</span></td>
-<td align="left">mandatory if ‚varFormat‘ element is present</td>
+<td align="left">DDI attribute indicating whether the variable is
+<code>character</code> or <code>numeric</code>; the default is <code>numeric</code>.</td>
+<td align="left">//codeBook/dataDscr/var/varFormat<code>[@type]</code></td>
+<td align="left">mandatory if <code>varFormat</code> element is present</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -893,8 +862,7 @@ resources outside the codebook.</td>
 <td align="left">variable url</td>
 <td align="left">Attribute to provide an URL for more detailed
 information on the variable.</td>
-<td align="left">//codeBook/dataDscr/var/notes/ExtLink<span
-class="math display">\[@URI\]</span></td>
+<td align="left">//codeBook/dataDscr/var/notes/ExtLink<code>[@URI]</code></td>
 <td align="left">mandatory if ‘ExtLink’ element is present</td>
 </tr>
 </tbody>
@@ -903,7 +871,7 @@ class="math display">\[@URI\]</span></td>
 </div>
 
 <footer>
-  <p>Copyright &copy; 2024 Open Data Format. All rights reserved.</p>
+  <p>Copyright &copy; 2026 Open Data Format. All rights reserved.</p>
 </footer>
 
 

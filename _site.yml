@@ -18,7 +18,7 @@ navbar:
     - icon: fa-envelope fa-lg
       href: mailto:thartl@diw.de
     - icon: fa-github fa-lg
-      href: http://github.com/opendataformat/
+      href: https://github.com/opendataformat/
 output:
   html_document:
     title: "Open Data Format"

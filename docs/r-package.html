@@ -37,34 +37,17 @@
 <!-- header.html -->
 <link rel="icon" href="images/odf_icon_transparent.ico" type="image/x-icon">
 
-<style>
-    .navbar {
-        display: flex; /* Use flexbox for the navbar */
-        align-items: center; /* Center items vertically */
-        padding: 10px; /* Add padding for vertical space */
-    }
-
-    .navbar-brand {
-        display: flex; /* Use flexbox for the brand */
-        align-items: center; /* Center items vertically */
-    }
-
-    .navbar-brand img {
-        height: 150px;  /* Set the height of the icon */
-        max-height: 150px; /* Ensure it doesn't exceed the navbar height */
-        width: auto; /* Maintain aspect ratio */
-        margin-right: 10px;  /* Space between icon and text */
-    }
-</style>
-
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const navbarBrand = document.querySelector('.navbar-brand');
-        const icon = document.createElement('img');
-        icon.src = 'images/odf_icon_long_white2_transparent.ico';  // Adjust this path if necessary
-        icon.alt = 'ODF Icon';  // Alt text for accessibility
-        navbarBrand.prepend(icon);
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  const navbarBrand = document.querySelector(".navbar-brand");
+  if (!navbarBrand || navbarBrand.querySelector(".odf-navbar-logo")) return;
+
+  const icon = document.createElement("img");
+  icon.src = "images/odf_icon_long_white2_higher_transparent.png";
+  icon.alt = "Open Data Format";
+  icon.className = "odf-navbar-logo";
+  navbarBrand.prepend(icon);
+});
 </script>
 
 <style type="text/css">
@@ -305,7 +288,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="http://github.com/opendataformat/">
+  <a href="https://github.com/opendataformat/">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -429,7 +412,7 @@ href="https://github.com/opendataformat/r-package-opendataformat/issues">Github<
 </div>
 
 <footer>
-  <p>Copyright &copy; 2024 Open Data Format. All rights reserved.</p>
+  <p>Copyright &copy; 2026 Open Data Format. All rights reserved.</p>
 </footer>
 
 
